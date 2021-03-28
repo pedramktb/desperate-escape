@@ -3,10 +3,14 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour {
     public float moveSpeed;
     public Rigidbody2D rb;
-    Vector2 movement,mousePos;
+    Vector2 movement,mousePos,hndscale;
     public Animator animator;
     public Camera cam;
     public SpriteRenderer sr;
+    public GameObject rp,hnd;
+    void Start(){
+        hndscale=hnd.transform.localScale;
+    }
     void Update(){
         movement.x=Input.GetAxisRaw("Horizontal");
         movement.y=Input.GetAxisRaw("Vertical");
@@ -18,8 +22,14 @@ public class PlayerMovement : MonoBehaviour {
         rb.MovePosition(rb.position+movement*moveSpeed*Time.fixedDeltaTime);
         Vector2 lookDir=mousePos-rb.position;
         float angle=Mathf.Atan2(lookDir.y,lookDir.x)*Mathf.Rad2Deg;
-        if(angle>-90 && angle<90) sr.flipX=false;
-        else sr.flipX=true;
-
+        rp.transform.rotation=Quaternion.Euler(0,0,angle);
+        if(angle>-90 && angle<90) {
+            sr.flipX=false;
+            hnd.transform.localScale=new Vector2(hndscale.x,hndscale.y);
+        }
+        else {
+            sr.flipX=true;
+            hnd.transform.localScale=new Vector2(hndscale.x,hndscale.y*-1);
+        }
     }
 }
