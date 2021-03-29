@@ -10,7 +10,7 @@ public class Pistol : Weapon
     {
         if(Time.time-lastTime<delay) return;
         lastTime=Time.time;
-        animator.SetBool("Shoot", true);
+        animator.SetTrigger("Shoot");
         GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
         rb.AddForce(firePoint.right * bulletForce, ForceMode2D.Impulse);

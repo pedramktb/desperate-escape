@@ -1,7 +1,7 @@
 using UnityEngine;
 public class PlayerShooting : MonoBehaviour
 {
-    public GameObject hand, pistolPrefab, minigunPrefab, shotgunPrefab, rocketLauncherPrefab;
+    public GameObject hand,pistolPrefab, minigunPrefab, shotgunPrefab, rocketLauncherPrefab;
     public string initialWeapon;
     GameObject pistol, minigun, shotgun, rocketLauncher;
     Weapon weapon;
@@ -19,10 +19,12 @@ public class PlayerShooting : MonoBehaviour
     }
     void Update()
     {
-        if (Input.GetButtonDown("Fire1"))
-        {
-            weapon.Shoot();
-        }
+        if (Input.GetButtonDown("Fire1")) weapon.Shoot();
+        if (Input.GetKeyDown(KeyCode.Alpha1)) Switch("Pistol");
+        if (Input.GetKeyDown(KeyCode.Alpha2)) Switch("Shotgun");
+        if (Input.GetKeyDown(KeyCode.Alpha3)) Switch("Minigun");
+        if (Input.GetKeyDown(KeyCode.Alpha4)) Switch("Rocket Launcher");
+
     }
     void Switch(string w)
     {

@@ -73,8 +73,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1053099973
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 4f725a3d60c1f554ba9575d4a598ce8f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -159,6 +159,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hand: {fileID: 3375195359832404647}
+  hand2: {fileID: 0}
   pistolPrefab: {fileID: 7141960402068072363, guid: 624ad858e610032439800bca885f92eb, type: 3}
   minigunPrefab: {fileID: 1834569796073760223, guid: 130f52b38c6ca1748832e24fbe56ac81, type: 3}
   shotgunPrefab: {fileID: 5744906480695566485, guid: b2414051c441dad438e7c8248dd7494c, type: 3}
@@ -232,9 +233,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: 1053099973
+  m_SortingLayer: 1
+  m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: dd5634a370a4f7d409289fb9156c3005, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
