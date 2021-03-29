@@ -1,7 +1,25 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: f69acc34ab535be4ca403b1726491b20
 TextureImporter:
   internalIDToNameTable: []
+=======
+guid: 928b63f9323b4f149b795d69f457116c
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4923159571906479061
+    second: Doctor_0
+  - first:
+      213: -6744697270320183608
+    second: Doctor_1
+  - first:
+      213: 7836326308847732125
+    second: Doctor_2
+  - first:
+      213: -6513463893940628923
+    second: Doctor_3
+>>>>>>> 8bd14d61b888c806e0a866887f688be6bac54325
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -32,7 +50,11 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
+<<<<<<< HEAD
     filterMode: -1
+=======
+    filterMode: 0
+>>>>>>> 8bd14d61b888c806e0a866887f688be6bac54325
     aniso: -1
     mipBias: -100
     wrapU: 1
@@ -41,7 +63,11 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
+<<<<<<< HEAD
   spriteMode: 1
+=======
+  spriteMode: 2
+>>>>>>> 8bd14d61b888c806e0a866887f688be6bac54325
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -68,7 +94,23 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
+<<<<<<< HEAD
     textureCompression: 1
+=======
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+>>>>>>> 8bd14d61b888c806e0a866887f688be6bac54325
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -77,7 +119,95 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
+<<<<<<< HEAD
     sprites: []
+=======
+    sprites:
+    - serializedVersion: 2
+      name: Doctor_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d3cc00fb83925440800000000000000
+      internalID: 4923159571906479061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Doctor_1
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c6c40d41950662a0800000000000000
+      internalID: -6744697270320183608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Doctor_2
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d95caee524930cc60800000000000000
+      internalID: 7836326308847732125
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Doctor_3
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 0
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 542165829178b95a0800000000000000
+      internalID: -6513463893940628923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+>>>>>>> 8bd14d61b888c806e0a866887f688be6bac54325
     outline: []
     physicsShape: []
     bones: []
