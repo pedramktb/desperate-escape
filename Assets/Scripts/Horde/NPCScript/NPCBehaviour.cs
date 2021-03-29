@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityCore.GameSystems;
-public class NPCBehaviour : MonoBehaviour
+public abstract class NPCBehaviour : MonoBehaviour
 {
     Health m_Health;
     AgentMovement movement;
@@ -15,5 +15,15 @@ public class NPCBehaviour : MonoBehaviour
         movement = GetComponent<AgentMovement>();
     }
 
+    public virtual void Initialize(NPCData data){
+        movement.Initialize(data.MoveSpeed);
+    }
+
+    public void SetDestination(Vector2 pos){
+        movement.SetDestination(pos);
+    }
+
+
+    
 
 }
