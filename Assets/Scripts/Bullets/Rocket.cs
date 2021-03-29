@@ -3,11 +3,10 @@ using UnityEngine;
 public class Rocket : MonoBehaviour
 {
     public float damage;
-    public GameObject hitEffect;
-    public float effectDuration;
+    public ParticleSystem[] particleSystems;
     void OnCollisionEnter2D(Collision2D collision){
-        GameObject effect = Instantiate(hitEffect,transform.position,Quaternion.identity);
-        Destroy(effect,effectDuration);
         Destroy(gameObject);
+        foreach(ParticleSystem particleSystem in particleSystems)
+        Instantiate(particleSystem, transform.position, Quaternion.identity);
     }
 }

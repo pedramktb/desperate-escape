@@ -145,5 +145,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 0
-  hitEffect: {fileID: 0}
-  effectDuration: 1
+  particleSystems:
+  - {fileID: 21090298796061478, guid: db70f51b6490c9c4a854d2bbef3ddd96, type: 3}
