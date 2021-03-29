@@ -1,9 +1,5 @@
 fileFormatVersion: 2
-<<<<<<< Updated upstream:Assets/Arts/Sprites/Zombies/Normal Zombie/Normal Zombie Back.png.meta
-guid: 6936d566e790aaf469d5aabb0b742c18
-=======
-guid: 6f0fbdb94c9dea74591274c121b65d22
->>>>>>> Stashed changes:Assets/Arts/Sprites/Zombie/Zombie.png.meta
+guid: ede5d603d71f14f4a8506b8822eaff23
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
