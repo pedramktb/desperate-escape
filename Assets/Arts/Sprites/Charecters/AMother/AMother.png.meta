@@ -1,19 +1,19 @@
 fileFormatVersion: 2
-guid: 928b63f9323b4f149b795d69f457116c
+guid: bfb1a98dc77b555409a2f127c1524bd8
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4923159571906479061
-    second: Doctor_0
+      213: 1785038706021865792
+    second: A Mother_0
   - first:
-      213: -6744697270320183608
-    second: Doctor_1
+      213: 3452711331620614625
+    second: A Mother_1
   - first:
-      213: 7836326308847732125
-    second: Doctor_2
+      213: -349072641804950224
+    second: A Mother_2
   - first:
-      213: -6513463893940628923
-    second: Doctor_3
+      213: 7804585410509342328
+    second: A Mother_3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -103,7 +103,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Doctor_0
+      name: A Mother_0
       rect:
         serializedVersion: 2
         x: 0
@@ -117,14 +117,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5d3cc00fb83925440800000000000000
-      internalID: 4923159571906479061
+      spriteID: 04991cede3bb5c810800000000000000
+      internalID: 1785038706021865792
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Doctor_1
+      name: A Mother_1
       rect:
         serializedVersion: 2
         x: 96
@@ -138,14 +138,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8c6c40d41950662a0800000000000000
-      internalID: -6744697270320183608
+      spriteID: 1e17631b9ae7aef20800000000000000
+      internalID: 3452711331620614625
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Doctor_2
+      name: A Mother_2
       rect:
         serializedVersion: 2
         x: 192
@@ -159,14 +159,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d95caee524930cc60800000000000000
-      internalID: 7836326308847732125
+      spriteID: 035a8602848d72bf0800000000000000
+      internalID: -349072641804950224
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Doctor_3
+      name: A Mother_3
       rect:
         serializedVersion: 2
         x: 288
@@ -180,8 +180,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 542165829178b95a0800000000000000
-      internalID: -6513463893940628923
+      spriteID: 8760b9494157f4c60800000000000000
+      internalID: 7804585410509342328
       vertices: []
       indices: 
       edges: []

@@ -1,19 +1,19 @@
 fileFormatVersion: 2
-guid: 928b63f9323b4f149b795d69f457116c
+guid: 2ac64944058503b42a950e1e1e912aca
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4923159571906479061
-    second: Doctor_0
+      213: 8727542974237636246
+    second: AmmoGuy_0
   - first:
-      213: -6744697270320183608
-    second: Doctor_1
+      213: -4839436243355587528
+    second: AmmoGuy_1
   - first:
-      213: 7836326308847732125
-    second: Doctor_2
+      213: -2522978260746261315
+    second: AmmoGuy_2
   - first:
-      213: -6513463893940628923
-    second: Doctor_3
+      213: 9141188176201640801
+    second: AmmoGuy_3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -103,7 +103,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Doctor_0
+      name: AmmoGuy_0
       rect:
         serializedVersion: 2
         x: 0
@@ -117,14 +117,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5d3cc00fb83925440800000000000000
-      internalID: 4923159571906479061
+      spriteID: 696f36538167e1970800000000000000
+      internalID: 8727542974237636246
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Doctor_1
+      name: AmmoGuy_1
       rect:
         serializedVersion: 2
         x: 96
@@ -138,14 +138,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8c6c40d41950662a0800000000000000
-      internalID: -6744697270320183608
+      spriteID: 83ca3a9806ed6dcb0800000000000000
+      internalID: -4839436243355587528
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Doctor_2
+      name: AmmoGuy_2
       rect:
         serializedVersion: 2
         x: 192
@@ -159,14 +159,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d95caee524930cc60800000000000000
-      internalID: 7836326308847732125
+      spriteID: dbcaf20a3a49cfcd0800000000000000
+      internalID: -2522978260746261315
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Doctor_3
+      name: AmmoGuy_3
       rect:
         serializedVersion: 2
         x: 288
@@ -180,8 +180,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 542165829178b95a0800000000000000
-      internalID: -6513463893940628923
+      spriteID: 16bef73d6360cde70800000000000000
+      internalID: 9141188176201640801
       vertices: []
       indices: 
       edges: []
