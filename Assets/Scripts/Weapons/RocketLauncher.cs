@@ -12,5 +12,7 @@ public class RocketLauncher : Weapon
         GameObject rocket = Instantiate(rocketPrefab, firePoint.position, firePoint.rotation);
         Rigidbody2D rb = rocket.GetComponent<Rigidbody2D>();
         rb.AddForce(firePoint.right * rocketForce, ForceMode2D.Impulse);
+        ParticleSystem particleSystem = GetComponentInChildren<ParticleSystem>();
+        particleSystem.Play();
     }
 }

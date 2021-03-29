@@ -148,7 +148,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.422, y: 0.039, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 202797099694795216}
   m_Father: {fileID: 5258050424029173262}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -234,3 +235,73 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1001 &3941369638884455168
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 7555976038827663315}
+    m_Modifications:
+    - target: {fileID: 3774847918897240784, guid: 47a6d8c53771ddb4587baea62e4ca76e, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3774847918897240784, guid: 47a6d8c53771ddb4587baea62e4ca76e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3774847918897240784, guid: 47a6d8c53771ddb4587baea62e4ca76e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3774847918897240784, guid: 47a6d8c53771ddb4587baea62e4ca76e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3774847918897240784, guid: 47a6d8c53771ddb4587baea62e4ca76e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 3774847918897240784, guid: 47a6d8c53771ddb4587baea62e4ca76e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 3774847918897240784, guid: 47a6d8c53771ddb4587baea62e4ca76e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3774847918897240784, guid: 47a6d8c53771ddb4587baea62e4ca76e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3774847918897240784, guid: 47a6d8c53771ddb4587baea62e4ca76e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 3774847918897240784, guid: 47a6d8c53771ddb4587baea62e4ca76e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3774847918897240784, guid: 47a6d8c53771ddb4587baea62e4ca76e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3774847918897240785, guid: 47a6d8c53771ddb4587baea62e4ca76e, type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3774847918897240790, guid: 47a6d8c53771ddb4587baea62e4ca76e, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3774847918897240791, guid: 47a6d8c53771ddb4587baea62e4ca76e, type: 3}
+      propertyPath: m_Name
+      value: Minigun Particle
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 47a6d8c53771ddb4587baea62e4ca76e, type: 3}
+--- !u!4 &202797099694795216 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3774847918897240784, guid: 47a6d8c53771ddb4587baea62e4ca76e, type: 3}
+  m_PrefabInstance: {fileID: 3941369638884455168}
+  m_PrefabAsset: {fileID: 0}

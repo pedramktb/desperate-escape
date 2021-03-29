@@ -14,5 +14,7 @@ public class Pistol : Weapon
         GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
         rb.AddForce(firePoint.right * bulletForce, ForceMode2D.Impulse);
+        ParticleSystem particleSystem = GetComponentInChildren<ParticleSystem>();
+        particleSystem.Play();
     }
 }

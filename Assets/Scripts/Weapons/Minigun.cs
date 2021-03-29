@@ -21,6 +21,8 @@ public class Minigun : Weapon
             Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
             rb.AddForce(firePoint.right * bulletForce, ForceMode2D.Impulse);
             yield return new WaitForSeconds(delay);
+            ParticleSystem particleSystem = GetComponentInChildren<ParticleSystem>();
+            particleSystem.Play();
         }
         animator.SetBool("isTurning", false);
     }
