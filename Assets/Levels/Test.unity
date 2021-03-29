@@ -326,7 +326,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 839642720}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.7, y: -0.38, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1197807482}
@@ -365,8 +365,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hand: {fileID: 894080490}
-  wep: {fileID: 0}
   pistolPrefab: {fileID: 7141960402068072363, guid: 624ad858e610032439800bca885f92eb, type: 3}
+  minigunPrefab: {fileID: 1834569796073760223, guid: 130f52b38c6ca1748832e24fbe56ac81, type: 3}
+  shotgunPrefab: {fileID: 5744906480695566485, guid: b2414051c441dad438e7c8248dd7494c, type: 3}
+  rocketLauncherPrefab: {fileID: 1835535242499296500, guid: 39525331050477b41a9f97a47c02d0b1, type: 3}
+  initialWeapon: Pistol
 --- !u!1 &894080490
 GameObject:
   m_ObjectHideFlags: 0
@@ -392,7 +395,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 894080490}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.269, y: -0.155, z: 0}
+  m_LocalPosition: {x: 0.3, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1197807482}
