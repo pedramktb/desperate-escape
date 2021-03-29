@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 public class HordeController : MonoBehaviour
 {
     List<NPCBehaviour> m_currentNpcHorde;
@@ -21,16 +20,21 @@ public class HordeController : MonoBehaviour
         InitializeHordeCenter();
     }
 
-    void Start()
+    void Update()
     {
-
+        if (Input.GetMouseButtonDown(0))
+        {
+            Vector3 w = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            MoveHordeTowards(w);
+        }
     }
 
     private void InitializeHordeCenter()
     {
         m_HordeCenter = new GameObject("HordeCenter");
-        m_HordeCenter.AddComponent(typeof(NavMeshAgent2D));
-        m_HordeCenter.AddComponent(typeof(Grid));
+        m_HordeCenter.AddComponent<NavMeshAgent2D>();
+        m_HordeCenter.AddComponent<HordeGrid>().displayGridGizmos = false;
+
     }
     public void InitilizeHorde(HordeData hordeData, Vector2 hordeStartingPos)
     {
@@ -71,7 +75,7 @@ public class HordeController : MonoBehaviour
     {
         int hordeCount = m_currentNpcHorde.Count;
         NavMeshAgent2D pathfinder = m_HordeCenter.GetComponent<NavMeshAgent2D>();
-        Grid grid = m_HordeCenter.GetComponent<Grid>();
+        HordeGrid grid = m_HordeCenter.GetComponent<HordeGrid>();
         grid.displayGridGizmos = true;
         pathfinder.destination = position;
         if (pathfinder.remainingDistance > maxPathLength)
@@ -80,13 +84,13 @@ public class HordeController : MonoBehaviour
             pathfinder.destination = m_HordeCenter.transform.position;
             return;
         }
-        m_HordeCenter.transform.position = position;
-        grid.UpdateGrid(new Vector2Int(hordeCount * 2, hordeCount * 2), maxNpcGap * 2, LayerMask.NameToLayer("NoneWalkable"));
+        int hordeCountSqrt = (int)Mathf.Sqrt(hordeCount);
+        grid.UpdateGrid(new Vector2(hordeCountSqrt, hordeCountSqrt), maxNpcGap * 2, LayerMask.NameToLayer("NoneWalkable"), position);
         int iteration = 0;
         while (!GenerateValidPos(ref grid, hordeCount, position))
         {
             iteration++;
-            grid.UpdateGrid(new Vector2Int(hordeCount * 2, hordeCount * 2), (maxNpcGap * 2) - (npcGapDecreaseAmmountOnFailing * iteration), LayerMask.NameToLayer("NoneWalkable"));
+            grid.UpdateGrid(new Vector2(hordeCountSqrt, hordeCountSqrt), (maxNpcGap * 2) - (npcGapDecreaseAmmountOnFailing * iteration), LayerMask.NameToLayer("NoneWalkable"), position);
         }
 
         var generatedPositions = grid.GetChosenPositions();
@@ -97,15 +101,17 @@ public class HordeController : MonoBehaviour
         }
     }
 
-    private bool GenerateValidPos(ref Grid grid, int hordeCount, Vector2 startingPos)
+    private bool GenerateValidPos(ref HordeGrid grid, int hordeCount, Vector2 startingPos)
     {
         //Doing a Flood Fill-ish Algorithm to find the nodes
         Queue<Node> nodesToCheck = new Queue<Node>();
         Node startingNode = grid.WorldPointToNode(startingPos);
+        Debug.Log(startingNode.posInWorld);
+        Debug.Log(startingNode.posInGrid);
         grid.SetNodeAsChosen(startingNode);
         int choosenNodeCount = 1;
         nodesToCheck.Enqueue(startingNode);
-        while (nodesToCheck.Count == 0)
+        while (nodesToCheck.Count != 0)
         {
             var nextNode = nodesToCheck.Dequeue();
             if (choosenNodeCount >= hordeCount)

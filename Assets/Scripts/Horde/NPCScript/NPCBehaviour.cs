@@ -5,6 +5,7 @@ using UnityCore.GameSystems;
 public abstract class NPCBehaviour : MonoBehaviour
 {
     Health m_Health;
+    NPCData m_data;
     AgentMovement movement;
     
     public int IsUnderAttack {get; private set;}
@@ -16,14 +17,11 @@ public abstract class NPCBehaviour : MonoBehaviour
     }
 
     public virtual void Initialize(NPCData data){
+        m_data = data;
         movement.Initialize(data.MoveSpeed);
     }
 
     public void SetDestination(Vector2 pos){
         movement.SetDestination(pos);
     }
-
-
-    
-
 }

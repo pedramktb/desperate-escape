@@ -5,4 +5,7 @@ using UnityEngine;
 public class HordeData
 {
     public List<NPCData> startingHorde;
+    public HordeData(List<NPCData> data){
+        startingHorde = data;
+    }
 }

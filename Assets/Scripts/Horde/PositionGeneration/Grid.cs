@@ -2,17 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Timers;
-public class Grid : MonoBehaviour
+public class HordeGrid : MonoBehaviour
 {
     public bool displayGridGizmos;
     private float nodeRaduis;
     private Node[,] grid;
     private Vector2Int gridSize;
     private LayerMask unwalkableMask;
+    private Vector2 gridCenter;
     void CreateGrid()
     {
         grid = new Node[gridSize.x, gridSize.y];
-        Vector2 worldBottomLeft = (Vector2)transform.position - (Vector2)gridSize * nodeRaduis;
+        Vector2 worldBottomLeft = gridCenter - (Vector2)gridSize * nodeRaduis;
         for (int x = 0; x < gridSize.x; x++)
         {
             for (int y = 0; y < gridSize.y; y++)
@@ -29,24 +30,25 @@ public class Grid : MonoBehaviour
         grid[node.posInGrid.x, node.posInGrid.y].isChosen = true;
     }
 
-    public void UpdateGrid(Vector2Int gridSize, float nodeRaduis, LayerMask unwalkableMask)
+    public void UpdateGrid(Vector2 gridDiameter, float nodeRaduis, LayerMask unwalkableMask , Vector2 gridCenter)
     {
-        this.gridSize = gridSize;
+        gridSize = new Vector2Int((int)(gridDiameter.x / (nodeRaduis * 2)), (int)(gridDiameter.y / (nodeRaduis * 2)));
         this.nodeRaduis = nodeRaduis;
         this.unwalkableMask = unwalkableMask;
+        this.gridCenter = gridCenter;
         CreateGrid();
     }
 
     public Node WorldPointToNode(Vector2 point)
     {
-        float percentX = Mathf.Clamp01((point.x + nodeRaduis * gridSize.x) / (nodeRaduis * 2 * gridSize.x));
-        float percentY = Mathf.Clamp01((point.y + nodeRaduis * gridSize.y) / (nodeRaduis * 2 * gridSize.y));
+        float percentX = Mathf.Clamp01((point.x -(gridCenter.x - nodeRaduis * gridSize.x)) / (nodeRaduis * 2 * gridSize.x));
+        float percentY = Mathf.Clamp01((point.y -(gridCenter.y - nodeRaduis * gridSize.y)) / (nodeRaduis * 2 * gridSize.y));
         return grid[Mathf.RoundToInt(percentX * (gridSize.x - 1)), Mathf.RoundToInt(percentY * (gridSize.y - 1))];
 
     }
     private void OnDrawGizmos()
     {
-        Gizmos.DrawWireCube(transform.position, (Vector2)gridSize * nodeRaduis * 2f);
+        Gizmos.DrawWireCube(gridCenter, (Vector2)gridSize * nodeRaduis * 2f);
         if (grid != null && displayGridGizmos)
         {
             foreach (Node node in grid)
@@ -83,8 +85,8 @@ public class Grid : MonoBehaviour
         {
             for (int j = 0; j < gridSize.y; j++)
             {
-                if (grid[i,j].isChosen)
-                    positions.Add(grid[i,j].posInWorld);
+                if (grid[i, j].isChosen)
+                    positions.Add(grid[i, j].posInWorld);
             }
         }
         return positions;
