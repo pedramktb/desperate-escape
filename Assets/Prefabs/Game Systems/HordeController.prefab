@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3241044600271933988
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3241044600271933990}
+  - component: {fileID: 3241044600271933989}
+  m_Layer: 0
+  m_Name: HordeController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3241044600271933990
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3241044600271933988}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3241044600271933989
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3241044600271933988}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bccfdd5f3ff5e7140a9859abf6bb1ae9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  normalGuyPrefabRef: {fileID: 1386062817762855724, guid: ee919984ae4d20549b79d365352df6a6, type: 3}
+  doctorPrefabRef: {fileID: 173416435273455162, guid: 018744b37c55728479cda91cb11390ee, type: 3}
+  grenadeGuyPrefabRef: {fileID: 7951663554503853489, guid: 022cfe912e014fe4fbb131522ecab2da, type: 3}
+  shieldGuyPrefabRef: {fileID: 5673612321612778244, guid: 22bf2c48a7cebdf4b8f37c6879e71f27, type: 3}
+  ammoGuyPrefabRef: {fileID: 4474871553501023069, guid: d94c8dbfddf59854e8444aa2d4b2bd3a, type: 3}
+  maxPathLength: 10
+  maxNpcGap: 0.1
+  npcGapDecreaseAmmountOnFailing: 0.01
