@@ -147,3 +147,5 @@ MonoBehaviour:
   damage: 0
   particleSystems:
   - {fileID: 21090298796061478, guid: db70f51b6490c9c4a854d2bbef3ddd96, type: 3}
+  - {fileID: 8409223212848200604, guid: 964c4aac60c6a624185c313de110e3e7, type: 3}
+  - {fileID: 8409223212848200604, guid: 476a83a0315b1344ca221f2ccf6adfac, type: 3}
