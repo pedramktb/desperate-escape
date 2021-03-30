@@ -38,7 +38,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (movement == Vector2.zero) animator.SetBool("isRunning", false);
         else animator.SetBool("isRunning", true);
-        rb.MovePosition(rb.position + movement * m_moveSpeed * Time.fixedDeltaTime);
+        rb.MovePosition(rb.position + movement.normalized * m_moveSpeed * Time.fixedDeltaTime);
         Vector2 lookDir = mousePos - rb.position;
         float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg;
         handRotatePoint.transform.rotation = Quaternion.Euler(0, 0, angle);

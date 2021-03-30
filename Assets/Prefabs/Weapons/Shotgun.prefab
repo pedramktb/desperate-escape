@@ -25,8 +25,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3853601187134028551}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.2, y: -0.15, z: 0}
-  m_LocalScale: {x: 1.1880717, y: 1.1880717, z: 1.1880717}
+  m_LocalPosition: {x: 0.15, y: -0.1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1097525526890454284}
   m_RootOrder: 1
@@ -69,7 +69,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1053099973
-  m_SortingLayer: 1
+  m_SortingLayer: 2
   m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: dd5634a370a4f7d409289fb9156c3005, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -106,7 +106,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4958316791309280772}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.447, y: 0.018, z: 0}
+  m_LocalPosition: {x: 0.5, y: 0.02, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7157326438346688830}
@@ -140,8 +140,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5744906480695566485}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.1, y: 0.1, z: 0}
-  m_LocalScale: {x: 0.8417, y: 0.8417, z: 0.8417}
+  m_LocalPosition: {x: 0.05, y: 0.08, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8073269086838603432}
   - {fileID: 5893097951037768016}
@@ -186,7 +186,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1053099973
-  m_SortingLayer: 1
+  m_SortingLayer: 2
   m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: a28ec4b5a9bda85498e33e42f064d52f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -213,14 +213,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firePoint: {fileID: 8073269086838603432}
   palletPrefab: {fileID: 2504930085306382558, guid: 98b62711265547c4ba239086bd969a05, type: 3}
-  hand2: {fileID: 3853601187134028551}
-  shootEffect: {fileID: 3774847918897240791, guid: 260dffe6cd4c0444f8be148d5b35c6e6, type: 3}
-  palletForce: 10
+  palletForce: 15
   delay: 1
-  lastTime: 0
-  palletDiversityAngle: 0.01
-  palletDiversityDistance: 0.15
-  palletCount: 3
+  palletDiversityAngle: 0.1
+  palletDiversityDistance: 0.2
+  palletCount: 5
   animator: {fileID: 1707529077208997980}
 --- !u!95 &1707529077208997980
 Animator:
@@ -254,7 +251,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3774847918897240784, guid: 260dffe6cd4c0444f8be148d5b35c6e6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.5
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 3774847918897240784, guid: 260dffe6cd4c0444f8be148d5b35c6e6, type: 3}
       propertyPath: m_LocalPosition.y
@@ -270,7 +267,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3774847918897240784, guid: 260dffe6cd4c0444f8be148d5b35c6e6, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.7071068
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3774847918897240784, guid: 260dffe6cd4c0444f8be148d5b35c6e6, type: 3}
       propertyPath: m_LocalRotation.y
@@ -278,11 +275,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3774847918897240784, guid: 260dffe6cd4c0444f8be148d5b35c6e6, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 3774847918897240784, guid: 260dffe6cd4c0444f8be148d5b35c6e6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: -90
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3774847918897240784, guid: 260dffe6cd4c0444f8be148d5b35c6e6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
@@ -290,7 +287,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3774847918897240784, guid: 260dffe6cd4c0444f8be148d5b35c6e6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
+      value: -90
       objectReference: {fileID: 0}
     - target: {fileID: 3774847918897240785, guid: 260dffe6cd4c0444f8be148d5b35c6e6, type: 3}
       propertyPath: playOnAwake

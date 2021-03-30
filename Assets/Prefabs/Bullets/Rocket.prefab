@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 3369788213516369263}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.6665503, y: 0.6665503, z: 0.6665503}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -144,7 +144,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b348edacee2cf0b4b81ad3046a8ef898, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 0
+  damage: 1200
+  blastRadious: 2
   particleSystems:
   - {fileID: 21090298796061478, guid: db70f51b6490c9c4a854d2bbef3ddd96, type: 3}
   - {fileID: 8409223212848200604, guid: 964c4aac60c6a624185c313de110e3e7, type: 3}

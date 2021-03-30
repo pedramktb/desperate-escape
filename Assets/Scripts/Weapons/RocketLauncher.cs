@@ -4,7 +4,8 @@ public class RocketLauncher : Weapon
     public Transform firePoint;
     public GameObject rocketPrefab;
     public float rocketForce;
-    public float delay,lastTime;
+    public float delay;
+    float lastTime;
     public override void Shoot()
     {
         if(Time.time-lastTime<delay) return;

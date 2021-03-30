@@ -4,7 +4,8 @@ public class Pistol : Weapon
     public Transform firePoint;
     public GameObject bulletPrefab;
     public float bulletForce;
-    public float delay,lastTime;
+    public float delay;
+    float lastTime;
     public Animator animator;
     public override void Shoot()
     {

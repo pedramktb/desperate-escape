@@ -1,10 +1,5 @@
 fileFormatVersion: 2
-<<<<<<< HEAD
 guid: f69acc34ab535be4ca403b1726491b20
-TextureImporter:
-  internalIDToNameTable: []
-=======
-guid: 928b63f9323b4f149b795d69f457116c
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -19,7 +14,6 @@ TextureImporter:
   - first:
       213: -6513463893940628923
     second: Doctor_3
->>>>>>> 8bd14d61b888c806e0a866887f688be6bac54325
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -50,11 +44,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-<<<<<<< HEAD
-    filterMode: -1
-=======
     filterMode: 0
->>>>>>> 8bd14d61b888c806e0a866887f688be6bac54325
     aniso: -1
     mipBias: -100
     wrapU: 1
@@ -63,11 +53,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-<<<<<<< HEAD
-  spriteMode: 1
-=======
   spriteMode: 2
->>>>>>> 8bd14d61b888c806e0a866887f688be6bac54325
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -94,9 +80,6 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-<<<<<<< HEAD
-    textureCompression: 1
-=======
     textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
@@ -110,7 +93,6 @@ TextureImporter:
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
->>>>>>> 8bd14d61b888c806e0a866887f688be6bac54325
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -119,9 +101,6 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-<<<<<<< HEAD
-    sprites: []
-=======
     sprites:
     - serializedVersion: 2
       name: Doctor_0
@@ -207,7 +186,6 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
->>>>>>> 8bd14d61b888c806e0a866887f688be6bac54325
     outline: []
     physicsShape: []
     bones: []
