@@ -23,9 +23,11 @@ public class Rocket : MonoBehaviour
     }
     void OnTriggerEnter2D(Collider2D collider)
     {
-        ExplosionDamage();
-        ExplosionEffects();
-        if (collider.gameObject.tag == "Zombie") Destroy(gameObject);
+        if (collider.gameObject.tag == "Zombie") {
+            ExplosionDamage();
+            ExplosionEffects();
+            Destroy(gameObject);
+        }
     }
     void OnCollisionEnter2D(Collision2D collision)
     {
