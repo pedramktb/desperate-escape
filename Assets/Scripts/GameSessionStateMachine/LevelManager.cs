@@ -37,7 +37,10 @@ public class LevelManager : StateMachine
 
     public void Initialize(PlayerData playerData, HordeData hordeData, ref bool showTutorial, GameManager gameManager)
     {
-        m_timeEngine = gameObject.AddComponent<TimeEngine>();
+       
+        m_timeEngine = GetComponent<TimeEngine>();
+        if(m_timeEngine == null)
+            m_timeEngine = gameObject.AddComponent<TimeEngine>();
         m_playerData = playerData;
         m_startingHorde = hordeData;
         m_gameManager = gameManager;

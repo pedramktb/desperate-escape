@@ -13,7 +13,6 @@ public class GameManager : MonoBehaviour
     public int levelCount;
     public int currentLevel;
 
-
     private void Start()
     {
         levelCount = SceneManager.sceneCountInBuildSettings;
@@ -37,6 +36,7 @@ public class GameManager : MonoBehaviour
 
     public void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
         var levelManager = FindObjectOfType<LevelManager>();
         levelManager.Initialize(playerDataToLoad, hordeDataToLoad, ref ShowTutorial, this);
     }
@@ -47,6 +47,7 @@ public class GameManager : MonoBehaviour
         playerData.Kill = playerBehaviour.currentKills;
         playerData.Score += hordeController.GetTeamValue();
         playerDataToLoad = playerData;
+
 
         List<NPCData> horde = new List<NPCData>();
         foreach (var i in hordeController.GetNPCs())
