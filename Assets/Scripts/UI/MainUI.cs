@@ -41,7 +41,7 @@ public class MainUI : MonoBehaviour
                 temp = playerShootingRef.CurrentShotgunAmmo.ToString();
                 break;
             case "Rocket Launcher":
-                temp = playerShootingRef.CurrentRockerlauncherAmmo.ToString();
+                temp = playerShootingRef.CurrentRocketlauncherAmmo.ToString();
                 break;
             default:
                 break;

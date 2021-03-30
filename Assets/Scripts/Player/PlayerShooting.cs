@@ -20,7 +20,7 @@ public class PlayerShooting : MonoBehaviour
     Weapon weapon;
 
     public int CurrentShotgunAmmo { get; set; }
-    public int CurrentRockerlauncherAmmo { get; set; }
+    public int CurrentRocketlauncherAmmo { get; set; }
     public int CurrentMinigunAmmo { get; set; }
 
     private void InitializeWeapons()
@@ -36,10 +36,10 @@ public class PlayerShooting : MonoBehaviour
         Switch(initialWeapon);
     }
 
-    public void Initialize(int currentShotgunAmmo, int currentRockerlauncherAmmo, int currentMinigunAmmo)
+    public void Initialize(int currentShotgunAmmo, int currentRocketlauncherAmmo, int currentMinigunAmmo)
     {
         CurrentShotgunAmmo = currentShotgunAmmo;
-        CurrentRockerlauncherAmmo = currentRockerlauncherAmmo;
+        CurrentRocketlauncherAmmo = currentRocketlauncherAmmo;
         CurrentMinigunAmmo = currentMinigunAmmo;
         InitializeWeapons();
     }
