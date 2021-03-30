@@ -192,10 +192,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fccedcd45ca2ed499357c45ec053357, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 1
-  maxShield: 1
-  criticalHealthRatio: 0
-  criticalShieldRatio: 0
+  maxHealth: 100
+  maxShield: 100
+  criticalHealthRatio: 0.2
+  criticalShieldRatio: 0.2
 --- !u!61 &5178623686066773279
 BoxCollider2D:
   m_ObjectHideFlags: 0

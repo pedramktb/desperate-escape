@@ -182,7 +182,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
-  demagePerSecond: 0.5
+  demagePerSecond: 1
   moveSpeed: 2
 --- !u!114 &-5169795653022670653
 MonoBehaviour:
@@ -196,7 +196,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fccedcd45ca2ed499357c45ec053357, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
+  maxHealth: 200
   maxShield: 0
   criticalHealthRatio: 0.2
   criticalShieldRatio: 0.2
