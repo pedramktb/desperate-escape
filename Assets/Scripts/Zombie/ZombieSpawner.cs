@@ -104,7 +104,8 @@ public class ZombieSpawner : MonoBehaviour
         if (!isSpawning)
             return;
         pathfinder.destination = playerBehaviour.transform.position;
-        if (pathfinder.remainingDistance > distanceToStartSpawning)
+        Vector2 viewPos = Camera.main.WorldToViewportPoint(transform.position);
+        if (pathfinder.remainingDistance > distanceToStartSpawning || viewPos.x >= 0 && viewPos.x <= 1 && viewPos.y >= 0 && viewPos.y <= 1)
         {
             return;
         }

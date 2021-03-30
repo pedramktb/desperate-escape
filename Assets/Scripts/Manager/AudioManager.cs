@@ -5,6 +5,7 @@ public class Sound
 {
     public string name;
     public AudioClip clip;
+    public bool isLoop = false;
     [Range(0f, 1f)] public float volume = 0.6f;
     [Range(0.5f, 1.5f)] public float pitch = 1f;
     [Range(0f, 0.5f)] public float volumeRandomness = 0.05f;
@@ -14,6 +15,7 @@ public class Sound
     {
         source = _source;
         source.clip = clip;
+        source.loop = isLoop;
     }
     public void Play()
     {

@@ -7,8 +7,8 @@ public class ShotgunPallet : MonoBehaviour
     void OnTriggerEnter2D(Collider2D collider){
         if(collider.gameObject.tag=="Zombie"){
             collider.gameObject.GetComponent<Health>().TakeDamage(damage,gameObject);
+            Destroy(gameObject);
         }
-        Destroy(gameObject);
     }
     void OnCollisionEnter2D(Collision2D collision){
         Destroy(gameObject);

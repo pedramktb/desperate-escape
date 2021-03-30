@@ -25,7 +25,7 @@ public class Rocket : MonoBehaviour
     {
         ExplosionDamage();
         ExplosionEffects();
-        Destroy(gameObject);
+        if (collider.gameObject.tag == "Zombie") Destroy(gameObject);
     }
     void OnCollisionEnter2D(Collision2D collision)
     {
