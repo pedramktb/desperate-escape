@@ -14,6 +14,9 @@ public class LevelManager : StateMachine
     [SerializeField] GameObject PlayerPrefabRef;
     [SerializeField] UIManager UIManager;
     [SerializeField] List<ZombieSpawner> spawners;
+    [SerializeField] CameraController cameraController;
+    [SerializeField] WinStation winStation;
+    
     TimeEngine m_timeEngine;
     HordeController m_hordeController;
     HordeData m_startingHorde;
@@ -37,7 +40,7 @@ public class LevelManager : StateMachine
         m_playerData = playerData;
         m_startingHorde = hordeData;
         m_hordeController = Instantiate(HordeControllerPrefabRef, Vector2.zero, Quaternion.identity).GetComponent<HordeController>();
-        if (showTutorial)
+        if (false)
         {
             SetState(GameSessionState.Tutorial);
             showTutorial = false;
@@ -61,7 +64,8 @@ public class LevelManager : StateMachine
             m_startingHorde,
             m_playerData,
             PlayerPrefabRef,
-            spawners);
+            spawners,
+            cameraController);
         }
         else if (state == GameSessionState.Tutorial)
         {
@@ -69,7 +73,7 @@ public class LevelManager : StateMachine
         }
         else if (state == GameSessionState.DuringGame)
         {
-            gameState = new DuringGameState(this, UIManager, m_hordeController, m_playerRef,spawners);
+            gameState = new DuringGameState(this, UIManager, m_hordeController, m_playerRef,spawners,cameraController);
         }
         else if (state == GameSessionState.Lost)
         {
@@ -90,6 +94,7 @@ public class LevelManager : StateMachine
         CurrentState = gameState;
         CurrentState?.Init();
         toggleStateUpdate = true;
+        Debug.Log($"switched to state {state}");
     }
 
     protected override void Update()

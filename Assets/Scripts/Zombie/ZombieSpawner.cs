@@ -45,7 +45,7 @@ public class ZombieSpawner : MonoBehaviour
 
     private void SpawnZombie()
     {
-        Vector2 spawnPos = (Vector2)transform.position + new Vector2(Random.Range(-1, 1) + transform.position.x, Random.Range(-1, 1) + transform.position.y);
+        Vector2 spawnPos = new Vector2(Random.Range(-1f, 1f) + transform.position.x, Random.Range(-1f, 1f) + transform.position.y);
         ZombieBehaviour spawnedZombie;
         if (type == ZombieType.Normal)
         {
@@ -128,6 +128,7 @@ public class ZombieSpawner : MonoBehaviour
     {
         if(hasWavePassed)
             return;
+        Debug.Log("Wave Started!");
         isSpawning = true;
         isWaveActive = true;
         timer = waveSpawnRate;

@@ -97,8 +97,6 @@ public class HordeController : MonoBehaviour
         //Doing a Flood Fill-ish Algorithm to find the nodes
         Queue<Node> nodesToCheck = new Queue<Node>();
         Node startingNode = grid.WorldPointToNode(startingPos);
-        Debug.Log(startingNode.posInWorld);
-        Debug.Log(startingNode.posInGrid);
         grid.SetNodeAsChosen(startingNode);
         int choosenNodeCount = 1;
         nodesToCheck.Enqueue(startingNode);

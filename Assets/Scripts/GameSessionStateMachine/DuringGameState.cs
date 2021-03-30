@@ -10,13 +10,15 @@ public class DuringGameState : State
     HordeController m_hordeController;
     PlayerBehaviour m_playerRef;
     bool m_canOperate;
+    CameraController m_cameraController;
     List<ZombieSpawner> m_spawners;
     public DuringGameState(
         LevelManager levelManager,
         UIManager UIManager,
         HordeController hordeController,
         PlayerBehaviour playerRef,
-        List<ZombieSpawner> spawners)
+        List<ZombieSpawner> spawners,
+        CameraController cameraController)
     {
         m_canOperate = false;
         m_levelManager = levelManager;
@@ -24,6 +26,7 @@ public class DuringGameState : State
         m_hordeController = hordeController;
         m_playerRef = playerRef;
         m_spawners = spawners;
+        m_cameraController = cameraController;
     }
     public override void Init()
     {

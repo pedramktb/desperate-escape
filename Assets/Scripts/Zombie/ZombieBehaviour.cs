@@ -13,11 +13,13 @@ public class ZombieBehaviour : MonoBehaviour
     {
         get
         {
-            return pathfinder.isStopped;
+            if(pathfinder.speed == 0)
+                return false;
+            return true;
         }
         set
         {
-            pathfinder.isStopped = value;
+            pathfinder.speed = value == true ? moveSpeed : 0;
             zombieMovement.IsAnimating = value;
         }
     }
@@ -39,13 +41,15 @@ public class ZombieBehaviour : MonoBehaviour
         pathfinder.speed = moveSpeed;
     }
 
-    void FixedUpdate(){
+    void FixedUpdate()
+    {
         pathfinder.SetDestination(objectToFollow.transform.position);
     }
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        if(col.gameObject.tag == "player"){
+        if (col.gameObject.tag == "player")
+        {
             //zombieSpawner.StartWave();
         }
     }

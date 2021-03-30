@@ -43,11 +43,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bccfdd5f3ff5e7140a9859abf6bb1ae9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  normalGuyPrefabRef: {fileID: 1386062817762855724, guid: ee919984ae4d20549b79d365352df6a6, type: 3}
-  doctorPrefabRef: {fileID: 173416435273455162, guid: 018744b37c55728479cda91cb11390ee, type: 3}
-  grenadeGuyPrefabRef: {fileID: 7951663554503853489, guid: 022cfe912e014fe4fbb131522ecab2da, type: 3}
-  shieldGuyPrefabRef: {fileID: 5673612321612778244, guid: 22bf2c48a7cebdf4b8f37c6879e71f27, type: 3}
-  ammoGuyPrefabRef: {fileID: 4474871553501023069, guid: d94c8dbfddf59854e8444aa2d4b2bd3a, type: 3}
+  normalGuyPrefabRef: {fileID: 3107788731508277032, guid: d4ab05fb1be56ff4dad0c293de6af0e3, type: 3}
+  doctorPrefabRef: {fileID: 5862771130196171925, guid: b2b11631202037c46a1470e1d31f89cb, type: 3}
+  grenadeGuyPrefabRef: {fileID: 0}
+  shieldGuyPrefabRef: {fileID: 2111527018190115538, guid: 7881506f37a8c3e47ad9cab6ddba63ea, type: 3}
+  ammoGuyPrefabRef: {fileID: -1995208717035500324, guid: 3352fcb00ce2cdf47960378acba20ce0, type: 3}
   maxPathLength: 10
   maxNpcGap: 0.1
   npcGapDecreaseAmmountOnFailing: 0.01
