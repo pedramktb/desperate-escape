@@ -34,7 +34,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -162, y: 207}
+  m_AnchoredPosition: {x: 250, y: 227}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7642236931784230580
@@ -65,12 +65,23 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Perks:
+  m_text: 'ABILITIES
 
-    Doctor            Health Regeneration
 
-    Shield Guy    
-    Shield Regeneration
+    You Get Following Perks
+
+    for Keeping these guys alive
+
+
+    Doctor    
+    Health Regeneration
+
+    Shield Guy     Shield Regeneration
+
+    Ammo Guy    
+    More Ammo in the Start
+
+    AMother     More Score
 
 '
   m_isRightToLeft: 0
@@ -106,7 +117,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 16
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -135,7 +146,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: -399.78815, w: -212.5701}
+  m_margin: {x: 0, y: 0, z: -442.0526, w: -329.4191}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -547,7 +558,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -777, y: 209}
+  m_AnchoredPosition: {x: -647, y: 239}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6501781579517774794
@@ -578,29 +589,31 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Keys:
+  m_text: 'CONTROLS
 
-    Left Click               Fire
 
-    1                           
-    Pistol
+    Mouse Aim
 
-    2                            Shotgun
+    Left Click     Fire
 
-    3                           
-    Minigun
+    1     Pistol
 
-    4                            Rocket Launcher
+    2    
+    Shotgun
 
-    W / Arrow Up        
-    Move Up
+    3     Minigun
 
-    A / Arrow Left         Move Left
+    4     Rocket Launcher
 
-    D / Arrow Right      Move
-    Right
+    W / Arrow Up     Move
+    Up
 
-    S / Arrow Down     Move Down'
+    A / Arrow Left     Move Left
+
+    D / Arrow Right     Move Right
+
+    S
+    / Arrow Down     Move Down'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -634,7 +647,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 16
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -663,7 +676,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: -399.78812, w: -212.5701}
+  m_margin: {x: 0, y: 0, z: -399.78812, w: -441.29544}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -825,7 +838,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 297}
+  m_AnchoredPosition: {x: 0, y: 302}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6501781579559240088
@@ -2886,7 +2899,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -261}
+  m_AnchoredPosition: {x: 0, y: -293}
   m_SizeDelta: {x: 246.2994, y: 46.1811}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6501781581048083635
