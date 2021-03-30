@@ -27,13 +27,13 @@ public class HordeController : MonoBehaviour
         m_HordeCenter = new GameObject("HordeCenter");
         m_HordeCenter.AddComponent<NavMeshAgent2D>();
         m_HordeCenter.AddComponent<HordeGrid>().displayGridGizmos = false;
-        
+
     }
 
     public int GetTeamValue()
     {
         int sum = 0;
-        foreach(var i in m_currentNpcHorde)
+        foreach (var i in m_currentNpcHorde)
         {
             sum += i.Value;
         }
@@ -149,14 +149,15 @@ public class HordeController : MonoBehaviour
 
     public void CheckAllNPCDeath()
     {
-        if(m_currentNpcHorde.Count!= 0)
+        if (m_currentNpcHorde.Count == 0)
         {
             OnAllNPCsDeath.Invoke();
         }
     }
 
-    public GameObject GetRandomNPC(){
-        int index = (int)Random.Range(0,m_currentNpcHorde.Count);
+    public GameObject GetRandomNPC()
+    {
+        int index = (int)Random.Range(0, m_currentNpcHorde.Count);
         return m_currentNpcHorde[index].gameObject;
     }
 }

@@ -53,6 +53,7 @@ public abstract class NPCBehaviour : MonoBehaviour
         m_Health.SetMaxShield(0);
         m_Health.OnDamaged += OnDamaged;
         m_Health.OnDeath += OnDeath;
+        Value = data.Value;
     }
 
     public void SetDestination(Vector2 pos)

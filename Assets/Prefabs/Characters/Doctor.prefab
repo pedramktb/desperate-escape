@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 7869013885758553434}
   - component: {fileID: -128576493293240192}
   - component: {fileID: 3778714497851250961}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Doctor
   m_TagString: NPC
   m_Icon: {fileID: 0}

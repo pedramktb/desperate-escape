@@ -46,9 +46,9 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void BackToMainMenu()
+    public void Restart()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1,LoadSceneMode.Single);
     }
 
     private void InitializeGameData()

@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: -5373428980526437904}
   - component: {fileID: -1995208717035500324}
   - component: {fileID: 7953953659293881006}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: AmmoGuy
   m_TagString: NPC
   m_Icon: {fileID: 0}

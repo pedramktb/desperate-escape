@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 1017707266375492400}
   - component: {fileID: 6944359403222230559}
   - component: {fileID: 5178623686066773279}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -179,6 +179,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c462e65f2989a27489123475453f2f29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentKills: 0
 --- !u!114 &6944359403222230559
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -231,7 +232,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3375195359832404646}
   - component: {fileID: 3375195359832404641}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Hand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -312,7 +313,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3375195361142698039}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: HandRotatePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}

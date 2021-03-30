@@ -41,8 +41,9 @@ public class LevelManager : StateMachine
         m_playerData = playerData;
         m_startingHorde = hordeData;
         m_gameManager = gameManager;
+
         m_hordeController = Instantiate(HordeControllerPrefabRef, Vector2.zero, Quaternion.identity).GetComponent<HordeController>();
-        if (false)
+        if (showTutorial)
         {
             SetState(GameSessionState.Tutorial);
             showTutorial = false;

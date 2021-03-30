@@ -105,7 +105,6 @@ public class ZombieBehaviour : MonoBehaviour
     }
 
 
-
     public void Destroy()
     {
         Destroy(gameObject);

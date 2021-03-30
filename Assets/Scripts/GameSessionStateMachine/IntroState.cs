@@ -63,6 +63,7 @@ public class IntroState : State
         m_UIManager.Initialize(m_playerRef, m_hordeController,m_gameManager);
         m_UIManager.ShowStartingPanel();
         m_timeEngine.StartTimer(new Timer(3, "introAnimation", OnIntroAnimationFinished));
+        AudioManager.instance.PlaySound("Music");
     }
     public override void DeInit()
     {

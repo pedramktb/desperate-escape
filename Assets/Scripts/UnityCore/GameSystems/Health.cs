@@ -102,7 +102,8 @@ namespace UnityCore.GameSystems
                 return;
             }
             demageDealtToShield = CurrentSheild;
-            amount -= CurrentSheild;
+            CurrentSheild = 0f;
+            amount -= demageDealtToShield;
             if (shieldBefore != 0)
                 OnShieldBroken?.Invoke(this);
             CurrentHealth -= amount;

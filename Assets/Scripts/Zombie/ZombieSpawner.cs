@@ -25,6 +25,7 @@ public class ZombieSpawner : MonoBehaviour
     List<WaveTrigger> waveTriggers;
 
     public event System.Action OnWaveStarted;
+    public event System.Action onZombieDeath;
     void Awake()
     {
         waveTriggers = new List<WaveTrigger>();
@@ -145,7 +146,7 @@ public class ZombieSpawner : MonoBehaviour
 
     public void StartWave()
     {
-        if (hasWavePassed)
+        if (hasWavePassed||isWaveActive)
             return;
         AudioManager.instance.PlaySound("Grawl");
         OnWaveStarted.Invoke();
@@ -164,6 +165,7 @@ public class ZombieSpawner : MonoBehaviour
     private void OnZombieDeath(Health health)
     {
         zombies.Remove(health.GetComponent<ZombieBehaviour>());
+        onZombieDeath.Invoke();
     }
 
 

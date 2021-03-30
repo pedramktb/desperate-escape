@@ -42,6 +42,7 @@ public class DuringGameState : State
         {
             i.StartSpawning();
             i.OnWaveStarted += OnWaveStarted;
+            i.onZombieDeath += OnZombieDeath;
         }
         m_playerRef.GetComponent<Health>().OnDeath += OnPlayerDeath;
         m_UIManager.ShowMainUI();
@@ -59,6 +60,7 @@ public class DuringGameState : State
         {
             i.StopAndDestroyEverything();
             i.OnWaveStarted -= OnWaveStarted;
+            i.onZombieDeath -= OnZombieDeath;
         }
     }
 
@@ -88,6 +90,9 @@ public class DuringGameState : State
         m_levelManager.SetState(GameSessionState.Lost);
     }
 
-
+    public void OnZombieDeath()
+    {
+        m_playerRef.currentKills++;
+    }
 
 }

@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 5303954479543870109}
   - component: {fileID: 4560692523430944050}
   - component: {fileID: -7578047940635938950}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: FastZombie
   m_TagString: Zombie
   m_Icon: {fileID: 0}
@@ -126,7 +126,7 @@ Rigidbody2D:
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
-  m_SleepingMode: 1
+  m_SleepingMode: 0
   m_CollisionDetection: 0
   m_Constraints: 4
 --- !u!61 &3299471960780240413

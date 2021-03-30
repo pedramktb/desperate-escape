@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7902884353215758877}
   - component: {fileID: -1840493431389019136}
   - component: {fileID: 5650954680986865193}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: MinigunBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}

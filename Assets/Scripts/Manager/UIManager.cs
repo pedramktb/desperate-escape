@@ -9,6 +9,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] GameObject wavePanelRef;
     [SerializeField] GameObject startingPanelRef;
     [SerializeField] GameObject losePanelRef;
+    [SerializeField] GameObject tutorialPanelRef;
     GameManager gameManager;
     PlayerBehaviour playerRef;
     HordeController hordeRef;
@@ -16,11 +17,12 @@ public class UIManager : MonoBehaviour
     public Action OnTutorialComplete;
     public void ShowTutorialPanel()
     {
-
+        tutorialPanelRef.SetActive(true);
     }
 
     public void TutorialDone()
     {
+        tutorialPanelRef.SetActive(false);
         OnTutorialComplete.Invoke();
     }
 
@@ -71,9 +73,9 @@ public class UIManager : MonoBehaviour
         losePanelRef.SetActive(false);
     }
 
-    public void BackToMainMenu()
+    public void Restart()
     {
-        gameManager.BackToMainMenu();
+        gameManager.Restart();
     }
 
 }
