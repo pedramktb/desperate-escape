@@ -17,7 +17,7 @@ public class Shotgun : Weapon
         {
             pallets[i] = Instantiate(palletPrefab, firePoint.position + new Vector3(-firePoint.position.normalized.y, firePoint.position.normalized.x, 0) * (i % 2 == 1 ? (i / 2 + 1) * palletDiversityDistance : (i / 2) * -palletDiversityDistance), firePoint.rotation);
             Rigidbody2D rb = pallets[i].GetComponent<Rigidbody2D>();
-            rb.AddForce((firePoint.right + new Vector3(0, i % 2 == 1 ? (i / 2 + 1) * palletDiversityAngle : (i / 2) * -palletDiversityAngle, 0)) * palletForce, ForceMode2D.Impulse);
+            rb.AddForce((firePoint.right + new Vector3(0, Mathf.Sin((i % 2 == 1 ? (i / 2 + 1) * palletDiversityAngle : (i / 2) * -palletDiversityAngle)*Mathf.Deg2Rad), 0)) * palletForce, ForceMode2D.Impulse);
         }
         ParticleSystem particleSystem = GetComponentInChildren<ParticleSystem>();
         particleSystem.Play();
