@@ -1,11 +1,24 @@
 using UnityEngine;
 public class PlayerShooting : MonoBehaviour
 {
-    public GameObject hand,pistolPrefab, minigunPrefab, shotgunPrefab, rocketLauncherPrefab;
-    public string initialWeapon;
-    GameObject pistol, minigun, shotgun, rocketLauncher;
+    [SerializeField] GameObject hand;
+    [SerializeField] GameObject pistolPrefab;
+    [SerializeField] GameObject minigunPrefab;
+    [SerializeField] GameObject shotgunPrefab;
+    [SerializeField] GameObject rocketLauncherPrefab;
+    [SerializeField] string initialWeapon;
+    [HideInInspector] public bool canOperate;
+    GameObject pistol;
+    GameObject minigun;
+    GameObject shotgun;
+    GameObject rocketLauncher;
     Weapon weapon;
-    void Start()
+
+    public int CurrentShotgunAmmo { get; private set; }
+    public int CurrentRockerlauncherAmmo { get; private set; }
+    public int CurrentMinigunAmmo { get; private set; }
+
+    private void InitializeWeapons()
     {
         pistol = Instantiate(pistolPrefab, hand.transform.position + pistolPrefab.transform.position, Quaternion.identity, hand.transform);
         pistol.SetActive(false);
@@ -17,8 +30,18 @@ public class PlayerShooting : MonoBehaviour
         rocketLauncher.SetActive(false);
         Switch(initialWeapon);
     }
+
+    public void Initialize(int currentShotgunAmmo,int currentRockerlauncherAmmo,int currentMinigunAmmo){
+        CurrentShotgunAmmo = currentShotgunAmmo;
+        CurrentRockerlauncherAmmo = currentRockerlauncherAmmo;
+        CurrentMinigunAmmo = currentMinigunAmmo;
+        InitializeWeapons();
+    }
+
     void Update()
     {
+        if (!canOperate)
+            return;
         if (Input.GetButtonDown("Fire1")) weapon.Shoot();
         if (Input.GetKeyDown(KeyCode.Alpha1)) Switch("Pistol");
         if (Input.GetKeyDown(KeyCode.Alpha2)) Switch("Shotgun");

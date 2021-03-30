@@ -20,15 +20,6 @@ public class HordeController : MonoBehaviour
         InitializeHordeCenter();
     }
 
-    void Update()
-    {
-        if (Input.GetMouseButtonDown(0))
-        {
-            Vector3 w = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            MoveHordeTowards(w);
-        }
-    }
-
     private void InitializeHordeCenter()
     {
         m_HordeCenter = new GameObject("HordeCenter");
@@ -71,7 +62,7 @@ public class HordeController : MonoBehaviour
     }
 
 
-    private void MoveHordeTowards(Vector2 position)
+    public void MoveHordeTowards(Vector2 position)
     {
         int hordeCount = m_currentNpcHorde.Count;
         NavMeshAgent2D pathfinder = m_HordeCenter.GetComponent<NavMeshAgent2D>();
@@ -133,5 +124,10 @@ public class HordeController : MonoBehaviour
         if (choosenNodeCount == 1)
             return false;
         return true;
+    }
+
+    public GameObject GetRandomNPC(){
+        int index = (int)Random.Range(0,m_currentNpcHorde.Count);
+        return m_currentNpcHorde[index].gameObject;
     }
 }

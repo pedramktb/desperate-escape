@@ -2,6 +2,7 @@
 {
     None,
     Tutorial,
+    Intro,
     DuringGame,
     ChooseSacrifice,
     Won,

@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 3232549718072799150}
   - component: {fileID: -8386195186190793067}
   - component: {fileID: 7661780071267904907}
+  - component: {fileID: 2111527018190115538}
   m_Layer: 0
   m_Name: ShieldGuy
   m_TagString: Untagged
@@ -187,3 +188,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   vicinity: 0.5
+--- !u!114 &2111527018190115538
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3232549718072799148}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cea737a61f3a1e49a5597a2c78f2a3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

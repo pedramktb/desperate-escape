@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 5812816080738655691}
   - component: {fileID: -5822106497795730572}
   - component: {fileID: -5373428980526437904}
+  - component: {fileID: -1995208717035500324}
   m_Layer: 0
   m_Name: AmmoGuy
   m_TagString: Untagged
@@ -187,3 +188,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   vicinity: 0.5
+--- !u!114 &-1995208717035500324
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4585708387301974089}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a3c7390ac719844da6391266a6bd96f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

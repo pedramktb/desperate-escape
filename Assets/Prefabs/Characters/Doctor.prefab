@@ -163,11 +163,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 5862771130196171924}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d20a1618407aae344b995cf36a402af9, type: 3}
+  m_Script: {fileID: 11500000, guid: 416c63d12cec53740b6f7ce096956b5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pathFinder: {fileID: 0}
-  vicinity: 0
 --- !u!114 &7869013885758553434
 MonoBehaviour:
   m_ObjectHideFlags: 0

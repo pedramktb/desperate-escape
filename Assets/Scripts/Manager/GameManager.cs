@@ -6,14 +6,21 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public Action<NPCBehaviour> OnNPCDeath;
-
     private PlayerData startPlayerData;
     private HordeData startHordeData;
     private PlayerData playerDataToLoad;
     private HordeData hordeDataToLoad;
+    private bool ShowTutorial = true;
 
     public void Start()
     {
+        
+    }
+
+    public void Play()
+    {
+        InitializeGameData();
+        StartLevel(1, startPlayerData, startHordeData);
     }
 
     private void StartLevel(int levelIndex, PlayerData playerData, HordeData hordeData)
@@ -27,7 +34,7 @@ public class GameManager : MonoBehaviour
     public void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         var levelManager = FindObjectOfType<LevelManager>();
-        levelManager.InitializeLevel(hordeDataToLoad);
+        levelManager.Initialize(playerDataToLoad, hordeDataToLoad,ref ShowTutorial);
     }
 
     private void LoadNextLevel()
@@ -39,15 +46,8 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void QuitGame(){
-        Application.Quit();
-    }
-
-    public void Play(){
-        InitializeGameData();
-    }
-
-    private void InitializeGameData(){
+    private void InitializeGameData()
+    {
         startPlayerData = new PlayerData(5, 10, 5, 5, 30, 300, 10, 3);
         List<NPCData> horde = new List<NPCData>();
         horde.Add(new DoctorData(10, 5, 3, 2, 5));
@@ -69,5 +69,9 @@ public class GameManager : MonoBehaviour
         horde.Add(new ShieldGuyData(10, 5, 3, 3));
         horde.Add(new AmmoGuyData(10, 5, 3, 10, 100, 3));
         startHordeData = new HordeData(horde);
+    }
+    public void QuitGame()
+    {
+        Application.Quit();
     }
 }

@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 3375195359744231720}
   - component: {fileID: 3375195359744231727}
   - component: {fileID: 3375195359744231723}
+  - component: {fileID: 1017707266375492400}
+  - component: {fileID: 6944359403222230559}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -74,7 +76,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1053099973
-  m_SortingLayer: 1
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 4f725a3d60c1f554ba9575d4a598ce8f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -139,13 +141,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c80cab629693ffb46a9aa58d45501ba6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 1
   rb: {fileID: 3375195359744231724}
   animator: {fileID: 3375195359744231720}
-  cam: {fileID: 0}
   sr: {fileID: 3375195359744231726}
   handRotatePoint: {fileID: 3375195361142698036}
   hand: {fileID: 3375195359832404647}
+  canMove: 0
 --- !u!114 &3375195359744231723
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -159,12 +160,40 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hand: {fileID: 3375195359832404647}
-  hand2: {fileID: 0}
   pistolPrefab: {fileID: 7141960402068072363, guid: 624ad858e610032439800bca885f92eb, type: 3}
   minigunPrefab: {fileID: 1834569796073760223, guid: 130f52b38c6ca1748832e24fbe56ac81, type: 3}
   shotgunPrefab: {fileID: 5744906480695566485, guid: b2414051c441dad438e7c8248dd7494c, type: 3}
   rocketLauncherPrefab: {fileID: 1835535242499296500, guid: 39525331050477b41a9f97a47c02d0b1, type: 3}
   initialWeapon: Pistol
+  canOperate: 0
+--- !u!114 &1017707266375492400
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3375195359744231725}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c462e65f2989a27489123475453f2f29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6944359403222230559
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3375195359744231725}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fccedcd45ca2ed499357c45ec053357, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 1
+  maxShield: 1
+  criticalHealthRatio: 0
+  criticalShieldRatio: 0
 --- !u!1 &3375195359832404647
 GameObject:
   m_ObjectHideFlags: 0
@@ -234,7 +263,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1053099973
-  m_SortingLayer: 1
+  m_SortingLayer: 2
   m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: dd5634a370a4f7d409289fb9156c3005, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

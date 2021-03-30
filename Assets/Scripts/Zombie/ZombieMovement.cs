@@ -5,17 +5,36 @@ public class ZombieMovement : MonoBehaviour
     public NavMeshAgent2D pathFinder;
     public float vicinity;
     Animator animator;
+    bool isAnimating;
+    public bool IsAnimating
+    {
+        get
+        {
+            return isAnimating;
+        }
+        set
+        {
+            animator.SetBool("isMoving", value);
+            isAnimating = value;
+        }
+    }
     Rigidbody2D rb;
     SpriteRenderer sr;
-    void Start()
+
+    void Awake()
     {
         sr = GetComponent<SpriteRenderer>();
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         pathFinder = GetComponent<NavMeshAgent2D>();
+        isAnimating = true;
     }
+
     void Update()
     {
+        if(!isAnimating){
+            return;
+        }
         if (pathFinder == null || pathFinder.remainingDistance < vicinity)
         {
             animator.SetBool("isMoving", false);

@@ -5,12 +5,48 @@ using UnityCore.StateMachine;
 
 public class DuringGameState : State
 {
+    LevelManager m_levelManager;
+    UIManager m_UIManager;
+    HordeController m_hordeController;
+    PlayerBehaviour m_playerRef;
+    bool m_canOperate;
+    List<ZombieSpawner> m_spawners;
+    public DuringGameState(
+        LevelManager levelManager,
+        UIManager UIManager,
+        HordeController hordeController,
+        PlayerBehaviour playerRef,
+        List<ZombieSpawner> spawners)
+    {
+        m_canOperate = false;
+        m_levelManager = levelManager;
+        m_UIManager = UIManager;
+        m_hordeController = hordeController;
+        m_playerRef = playerRef;
+        m_spawners = spawners;
+    }
     public override void Init()
     {
-        throw new System.NotImplementedException();
+        m_playerRef.AreActionsAllowed = true;
+        m_canOperate = true;
+        foreach (var i in m_spawners)
+        {
+            i.StartSpawning();
+        }
     }
     public override void DeInit()
     {
-        throw new System.NotImplementedException();
+        m_playerRef.AreActionsAllowed = false;
+        m_canOperate = false;
+    }
+
+    public override void Update()
+    {
+        if (!m_canOperate)
+            return;
+        if (Input.GetButtonDown("Fire2"))
+        {
+            m_hordeController.MoveHordeTowards(Camera.main.ScreenToWorldPoint(Input.mousePosition));
+        }
     }
 }
