@@ -1,6 +1,10 @@
 using UnityEngine;
 public class PlayerShooting : MonoBehaviour
 {
+    public static PlayerShooting instance;
+    void Awake(){
+        instance=this;
+    }
     [SerializeField] GameObject hand;
     [SerializeField] GameObject pistolPrefab;
     [SerializeField] GameObject minigunPrefab;
@@ -15,9 +19,9 @@ public class PlayerShooting : MonoBehaviour
     public string CurrentWeapon { get; private set; }
     Weapon weapon;
 
-    public int CurrentShotgunAmmo { get; private set; }
-    public int CurrentRockerlauncherAmmo { get; private set; }
-    public int CurrentMinigunAmmo { get; private set; }
+    public int CurrentShotgunAmmo { get; set; }
+    public int CurrentRockerlauncherAmmo { get; set; }
+    public int CurrentMinigunAmmo { get; set; }
 
     private void InitializeWeapons()
     {

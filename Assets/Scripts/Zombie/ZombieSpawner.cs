@@ -136,6 +136,7 @@ public class ZombieSpawner : MonoBehaviour
     {
         if (hasWavePassed)
             return;
+        AudioManager.instance.PlaySound("Grawl");
         OnWaveStarted.Invoke();
         isSpawning = true;
         isWaveActive = true;

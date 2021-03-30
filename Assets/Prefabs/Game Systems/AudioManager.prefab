@@ -87,6 +87,12 @@ MonoBehaviour:
     pitch: 1
     volumeRandomness: 0.1
     pitchRandomness: 0.1
+  - name: Grawl
+    clip: {fileID: 8300000, guid: e1496c31e59dee14ba50b12f0ef33c21, type: 3}
+    volume: 1
+    pitch: 1
+    volumeRandomness: 0.1
+    pitchRandomness: 0.1
   - name: Death
     clip: {fileID: 8300000, guid: 0215fbd03e7130c499b4485a44445fa6, type: 3}
     volume: 1
@@ -101,6 +107,12 @@ MonoBehaviour:
     pitchRandomness: 0.1
   - name: Grunt2
     clip: {fileID: 8300000, guid: a4d305582ec63404e96b3d629e64585c, type: 3}
+    volume: 1
+    pitch: 1
+    volumeRandomness: 0.1
+    pitchRandomness: 0.1
+  - name: Music
+    clip: {fileID: 8300000, guid: 1da4610360772da4884a45580314dfae, type: 3}
     volume: 1
     pitch: 1
     volumeRandomness: 0.1

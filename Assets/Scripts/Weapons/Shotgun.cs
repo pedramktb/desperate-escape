@@ -9,8 +9,9 @@ public class Shotgun : Weapon
     float lastTime;
     public override void Shoot()
     {
-        if (Time.time - lastTime < delay) return;
+        if (Time.time - lastTime < delay  || PlayerShooting.instance.CurrentShotgunAmmo == 0) return;
         lastTime = Time.time;
+        PlayerShooting.instance.CurrentShotgunAmmo--;
         AudioManager.instance.PlaySound("ShotgunShot");
         animator.SetTrigger("Shoot");
         GameObject[] pallets = new GameObject[palletCount];

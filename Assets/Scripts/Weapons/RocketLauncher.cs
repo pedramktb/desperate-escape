@@ -8,8 +8,9 @@ public class RocketLauncher : Weapon
     float lastTime;
     public override void Shoot()
     {
-        if(Time.time-lastTime<delay) return;
+        if(Time.time-lastTime<delay  || PlayerShooting.instance.CurrentShotgunAmmo == 0) return;
         lastTime=Time.time;
+        PlayerShooting.instance.CurrentRockerlauncherAmmo--;
         AudioManager.instance.PlaySound("Launcher");
         GameObject rocket = Instantiate(rocketPrefab, firePoint.position, firePoint.rotation);
         Rigidbody2D rb = rocket.GetComponent<Rigidbody2D>();

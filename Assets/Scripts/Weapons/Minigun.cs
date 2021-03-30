@@ -14,8 +14,9 @@ public class Minigun : Weapon
     }
     IEnumerator ShootBullet()
     {
-        while (Input.GetButton("Fire1"))
+        while (Input.GetButton("Fire1") && PlayerShooting.instance.CurrentMinigunAmmo > 0)
         {
+            PlayerShooting.instance.CurrentMinigunAmmo--;
             AudioManager.instance.PlaySound("Shot");
             animator.SetBool("isTurning", true);
             GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
