@@ -8,5 +8,6 @@ public class Rocket : MonoBehaviour
         Destroy(gameObject);
         foreach(ParticleSystem particleSystem in particleSystems)
         Instantiate(particleSystem, transform.position, Quaternion.identity);
+        AudioManager.instance.PlaySound("Explosion");
     }
 }
