@@ -11,6 +11,7 @@ public class Pistol : Weapon
     {
         if(Time.time-lastTime<delay) return;
         lastTime=Time.time;
+        AudioManager.instance.PlaySound("Shot");
         animator.SetTrigger("Shoot");
         GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();

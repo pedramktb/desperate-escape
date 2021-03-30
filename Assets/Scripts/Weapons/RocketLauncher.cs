@@ -10,6 +10,7 @@ public class RocketLauncher : Weapon
     {
         if(Time.time-lastTime<delay) return;
         lastTime=Time.time;
+        AudioManager.instance.PlaySound("Launcher");
         GameObject rocket = Instantiate(rocketPrefab, firePoint.position, firePoint.rotation);
         Rigidbody2D rb = rocket.GetComponent<Rigidbody2D>();
         rb.AddForce(firePoint.right * rocketForce, ForceMode2D.Impulse);

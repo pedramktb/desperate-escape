@@ -86,7 +86,6 @@ namespace UnityCore.GameSystems
         }
         public void TakeDamage(float amount, GameObject damageSource)
         {
-            Debug.Log("yes3");
             if (IsInvincible)
                 return;
 

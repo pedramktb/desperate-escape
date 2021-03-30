@@ -16,6 +16,7 @@ public class Minigun : Weapon
     {
         while (Input.GetButton("Fire1"))
         {
+            AudioManager.instance.PlaySound("Shot");
             animator.SetBool("isTurning", true);
             GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
             Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();

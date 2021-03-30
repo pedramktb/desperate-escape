@@ -142,7 +142,7 @@ public class ZombieSpawner : MonoBehaviour
 
     private void OnZombieDeath(Health health)
     {
-        zombies.Remove(health.GetComponent<ZombieBehaviour>());
+        //zombies.Remove(health.GetComponent<ZombieBehaviour>());
     }
 
 

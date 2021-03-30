@@ -45,36 +45,66 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sounds:
+  - name: Shot
+    clip: {fileID: 8300000, guid: d41fdce07c439f54ba467e13b270e88d, type: 3}
+    volume: 1
+    pitch: 0.6
+    volumeRandomness: 0.1
+    pitchRandomness: 0.1
+  - name: ShotgunShot
+    clip: {fileID: 8300000, guid: b51a9cf7fbe633e41a5234ab7d82e66e, type: 3}
+    volume: 1
+    pitch: 1
+    volumeRandomness: 0.1
+    pitchRandomness: 0.1
+  - name: PistolReload
+    clip: {fileID: 8300000, guid: 5062278736ebb954380837b8f3cb5c11, type: 3}
+    volume: 1
+    pitch: 1
+    volumeRandomness: 0.1
+    pitchRandomness: 0.1
+  - name: ShotgunReload
+    clip: {fileID: 8300000, guid: 9cd7f0d2e8abe3a46ac46756cf44bed2, type: 3}
+    volume: 1
+    pitch: 1
+    volumeRandomness: 0.1
+    pitchRandomness: 0.1
+  - name: Launcher
+    clip: {fileID: 8300000, guid: c3c854c57ccd0074c8a0920d3d927f6a, type: 3}
+    volume: 1
+    pitch: 1
+    volumeRandomness: 0.1
+    pitchRandomness: 0.1
+  - name: Launcher2
+    clip: {fileID: 8300000, guid: c389a6404ca2d9c44ab6c811741245b5, type: 3}
+    volume: 1
+    pitch: 1
+    volumeRandomness: 0.1
+    pitchRandomness: 0.1
   - name: Explosion
     clip: {fileID: 8300000, guid: e1e68c6d4cb459948b87c4b7b91f92e4, type: 3}
     volume: 1
     pitch: 1
-    volumeRandomness: 0.5
-    pitchRandomness: 0.5
+    volumeRandomness: 0.1
+    pitchRandomness: 0.1
   - name: Death
     clip: {fileID: 8300000, guid: 0215fbd03e7130c499b4485a44445fa6, type: 3}
     volume: 1
     pitch: 1
     volumeRandomness: 0.5
     pitchRandomness: 0.5
-  - name: Grunt1
+  - name: Grunt
     clip: {fileID: 8300000, guid: a4d305582ec63404e96b3d629e64585c, type: 3}
     volume: 1
     pitch: 1
-    volumeRandomness: 0.5
-    pitchRandomness: 0.5
+    volumeRandomness: 0.1
+    pitchRandomness: 0.1
   - name: Grunt2
     clip: {fileID: 8300000, guid: a4d305582ec63404e96b3d629e64585c, type: 3}
     volume: 1
     pitch: 1
-    volumeRandomness: 0.5
-    pitchRandomness: 0.5
-  - name: Shot
-    clip: {fileID: 8300000, guid: d41fdce07c439f54ba467e13b270e88d, type: 3}
-    volume: 1
-    pitch: 1
-    volumeRandomness: 0.5
-    pitchRandomness: 0.5
+    volumeRandomness: 0.1
+    pitchRandomness: 0.1
 --- !u!114 &3932774256224297837
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -11,6 +11,7 @@ public class Shotgun : Weapon
     {
         if (Time.time - lastTime < delay) return;
         lastTime = Time.time;
+        AudioManager.instance.PlaySound("ShotgunShot");
         animator.SetTrigger("Shoot");
         GameObject[] pallets = new GameObject[palletCount];
         for (int i = 0; i <= palletCount - 1; i++)
