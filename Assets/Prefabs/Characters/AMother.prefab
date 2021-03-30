@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 267270407055829776}
   - component: {fileID: -1804735761791184065}
   - component: {fileID: 3107788731508277032}
+  - component: {fileID: -5423634327117665243}
   m_Layer: 0
   m_Name: AMother
   m_TagString: NPC
@@ -200,3 +201,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 187db9a9440ca484fa0e5119ae665d4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-5423634327117665243
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2528396489970658404}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fccedcd45ca2ed499357c45ec053357, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 0
+  maxShield: 0
+  criticalHealthRatio: 0
+  criticalShieldRatio: 0

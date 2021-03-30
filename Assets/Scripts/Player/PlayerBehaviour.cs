@@ -6,7 +6,9 @@ public class PlayerBehaviour : MonoBehaviour
 {
     PlayerMovement m_playerMovement;
     PlayerShooting m_playerShooting;
+    SpriteRenderer spriteRenderer;
     Health m_health;
+    bool isFlashing;
     PlayerData m_playerData;
     bool canMove = false;
     public bool AreActionsAllowed {
@@ -22,7 +24,9 @@ public class PlayerBehaviour : MonoBehaviour
     void Awake(){
         m_playerMovement = GetComponent<PlayerMovement>();
         m_playerShooting = GetComponent<PlayerShooting>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
         m_health = GetComponent<Health>();
+        isFlashing = false;
     }
 
     public void InitializePlayer(PlayerData playerData){
@@ -33,5 +37,32 @@ public class PlayerBehaviour : MonoBehaviour
         m_health.SetMaxShield(playerData.MaxShield);
         m_health.AddShield(playerData.Shield);
         m_playerShooting.Initialize(playerData.MaxShotgunAmmo,playerData.MaxRockerLauncherAmmo,playerData.MaxMinigunAmmo);
+        m_health.OnDamaged += OnDamaged;
+        m_health.OnDeath += OnDeath;
+    }
+
+    private void OnDamaged(Health health, float amount, GameObject source)
+    {
+        StartCoroutine(Flash());
+    }
+
+    private void OnDeath(Health health)
+    {
+        
+    }
+
+    IEnumerator Flash()
+    {
+        if (isFlashing)
+            yield return null;
+        else
+        {
+            Color defaultColor = spriteRenderer.color;
+            spriteRenderer.color = Color.red;
+            isFlashing = true;
+            yield return new WaitForSeconds(0.2f);
+            spriteRenderer.color = defaultColor;
+            isFlashing = false;
+        }
     }
 }

@@ -182,7 +182,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
-  demagePerAttack: 2
+  demagePerSecond: 0.5
   moveSpeed: 2
 --- !u!114 &-5169795653022670653
 MonoBehaviour:

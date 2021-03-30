@@ -28,8 +28,12 @@ public class AudioManager : MonoBehaviour
     public static AudioManager instance;
     void Awake()
     {
-        if (instance != null) Debug.LogError("More than one AudioManager instances detected!");
-        instance = this;
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+            Destroy(this);
     }
     [SerializeField] Sound[] sounds;
     void Start()
@@ -37,6 +41,7 @@ public class AudioManager : MonoBehaviour
         for (int i = 0; i < sounds.Length; i++)
         {
             GameObject _go = new GameObject("Sound_" + i + "_" + sounds[i].name);
+            _go.transform.parent = transform;
             sounds[i].SetSource(_go.AddComponent<AudioSource>());
         }
     }

@@ -7,13 +7,15 @@ public class ZombieBehaviour : MonoBehaviour
 {
     NavMeshAgent2D pathfinder;
     ZombieMovement zombieMovement;
+    SpriteRenderer spriteRenderer;
     Health health;
+    bool isFlashing;
     GameObject objectToFollow;
     public bool ShouldFollow
     {
         get
         {
-            if(pathfinder.speed == 0)
+            if (pathfinder.speed == 0)
                 return false;
             return true;
         }
@@ -24,14 +26,16 @@ public class ZombieBehaviour : MonoBehaviour
         }
     }
     [SerializeField] ZombieType type;
-    [SerializeField] int demagePerAttack;
+    [SerializeField] float demagePerSecond;
     [SerializeField] float moveSpeed;
 
     void Awake()
     {
         pathfinder = GetComponent<NavMeshAgent2D>();
         zombieMovement = GetComponent<ZombieMovement>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
         health = GetComponent<Health>();
+        isFlashing = false;
     }
 
 
@@ -39,6 +43,27 @@ public class ZombieBehaviour : MonoBehaviour
     {
         this.objectToFollow = objectToFollow;
         pathfinder.speed = moveSpeed;
+        health.OnDamaged += OnDamaged;
+    }
+
+    private void OnDamaged(Health health, float amount, GameObject source)
+    {
+        StartCoroutine(Flash());
+    }
+
+    IEnumerator Flash()
+    {
+        if (isFlashing)
+            yield return null;
+        else
+        {
+            Color defaultColor = spriteRenderer.color;
+            spriteRenderer.color = Color.red;
+            isFlashing = true;
+            yield return new WaitForSeconds(0.2f);
+            spriteRenderer.color = defaultColor;
+            isFlashing = false;
+        }
     }
 
     void FixedUpdate()
@@ -46,11 +71,11 @@ public class ZombieBehaviour : MonoBehaviour
         pathfinder.SetDestination(objectToFollow.transform.position);
     }
 
-    void OnTriggerEnter2D(Collider2D col)
+    void OnTriggerStay2D(Collider2D other)
     {
-        if (col.gameObject.tag == "player")
+        if (other.gameObject.tag == "Player" || other.gameObject.tag == "NPC")
         {
-            //zombieSpawner.StartWave();
+            other.gameObject.GetComponent<Health>().TakeDamage(demagePerSecond * Time.fixedDeltaTime, gameObject);
         }
     }
 }

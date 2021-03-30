@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class WinStation : MonoBehaviour
 {
-    // Start is called before the first frame update
+
     void Start()
     {
         

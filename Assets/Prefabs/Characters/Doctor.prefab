@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 5862771130196171925}
   - component: {fileID: 7869013885758553434}
   - component: {fileID: -128576493293240192}
+  - component: {fileID: 3778714497851250961}
   m_Layer: 0
   m_Name: Doctor
   m_TagString: NPC
@@ -200,3 +201,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   vicinity: 0.5
+--- !u!114 &3778714497851250961
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5862771130196171924}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fccedcd45ca2ed499357c45ec053357, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 0
+  maxShield: 0
+  criticalHealthRatio: 0
+  criticalShieldRatio: 0
