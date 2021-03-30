@@ -50,7 +50,7 @@ public class PlayerBehaviour : MonoBehaviour
 
     private void OnDeath(Health health)
     {
-        
+        gameObject.SetActive(false);
     }
 
     IEnumerator Flash()

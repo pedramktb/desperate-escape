@@ -16,7 +16,8 @@ public class LevelManager : StateMachine
     [SerializeField] List<ZombieSpawner> spawners;
     [SerializeField] CameraController cameraController;
     [SerializeField] WinStation winStation;
-    
+
+    GameManager m_gameManager;
     TimeEngine m_timeEngine;
     HordeController m_hordeController;
     HordeData m_startingHorde;
@@ -34,11 +35,12 @@ public class LevelManager : StateMachine
         SetState(GameSessionState.Lost);
     }
 
-    public void Initialize(PlayerData playerData, HordeData hordeData, ref bool showTutorial)
+    public void Initialize(PlayerData playerData, HordeData hordeData, ref bool showTutorial,GameManager gameManager)
     {
         m_timeEngine = gameObject.AddComponent<TimeEngine>();
         m_playerData = playerData;
         m_startingHorde = hordeData;
+        m_gameManager = gameManager;
         m_hordeController = Instantiate(HordeControllerPrefabRef, Vector2.zero, Quaternion.identity).GetComponent<HordeController>();
         if (false)
         {
@@ -65,7 +67,8 @@ public class LevelManager : StateMachine
             m_playerData,
             PlayerPrefabRef,
             spawners,
-            cameraController);
+            cameraController,
+            m_gameManager);
         }
         else if (state == GameSessionState.Tutorial)
         {

@@ -17,6 +17,7 @@ public class IntroState : State
     PlayerBehaviour m_playerRef;
     List<ZombieSpawner> m_spawners;
     CameraController m_cameraController;
+    GameManager m_gameManager;
 
     public IntroState(LevelManager levelManager,
         UIManager UIManager,
@@ -28,7 +29,8 @@ public class IntroState : State
         PlayerData playerData,
         GameObject playerPrefab,
         List<ZombieSpawner> spawners,
-        CameraController cameraController)
+        CameraController cameraController,
+        GameManager gameManager)
     {
         m_levelManager = levelManager;
         m_UIManager = UIManager;
@@ -41,6 +43,7 @@ public class IntroState : State
         m_PlayerPrefab = playerPrefab;
         m_spawners = spawners;
         m_cameraController = cameraController;
+        m_gameManager = gameManager;
     }
     public override void Init()
     {
@@ -57,7 +60,7 @@ public class IntroState : State
                 i.Initialize(m_hordeController, m_playerRef);
             }
         }
-        m_UIManager.Initialize(m_playerRef, m_hordeController);
+        m_UIManager.Initialize(m_playerRef, m_hordeController,m_gameManager);
         m_UIManager.ShowStartingPanel();
         m_timeEngine.StartTimer(new Timer(3, "introAnimation", OnIntroAnimationFinished));
     }

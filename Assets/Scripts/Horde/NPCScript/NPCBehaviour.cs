@@ -19,8 +19,7 @@ public abstract class NPCBehaviour : MonoBehaviour
 
     private void OnDeath(Health health)
     {
-        Destroy(gameObject, 5);
-        gameObject.SetActive(false);
+        Destroy(gameObject);
     }
 
     IEnumerator Flash()

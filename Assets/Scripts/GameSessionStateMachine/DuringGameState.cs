@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityCore.StateMachine;
 using Utility;
+using UnityCore.GameSystems;
 
 
 public class DuringGameState : State
@@ -42,16 +43,21 @@ public class DuringGameState : State
             i.StartSpawning();
             i.OnWaveStarted += OnWaveStarted;
         }
+        m_playerRef.GetComponent<Health>().OnDeath += OnPlayerDeath;
         m_UIManager.ShowMainUI();
+        m_hordeController.OnAllNPCsDeath += OnAllNPCDeath;
     }
     public override void DeInit()
     {
         m_playerRef.AreActionsAllowed = false;
         m_canOperate = false;
         m_UIManager.HideMainUI();
+        m_playerRef.GetComponent<Health>().OnDeath -= OnPlayerDeath;
+        m_hordeController.OnAllNPCsDeath -= OnAllNPCDeath;
+    
         foreach (var i in m_spawners)
         {
-            i.StopSpawning();
+            i.StopAndDestroyEverything();
             i.OnWaveStarted -= OnWaveStarted;
         }
     }
@@ -71,4 +77,17 @@ public class DuringGameState : State
         m_UIManager.ShowWavePanel();
         m_timeEngine.StartTimer(new Timer(3, "hide wave panel", m_UIManager.HideWavePanel));
     }
+
+    public void OnPlayerDeath(Health health)
+    {
+        m_levelManager.SetState(GameSessionState.Lost);
+    }
+
+    public void OnAllNPCDeath()
+    {
+        m_levelManager.SetState(GameSessionState.Lost);
+    }
+
+
+
 }

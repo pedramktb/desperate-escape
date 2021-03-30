@@ -14,6 +14,7 @@ public class HordeController : MonoBehaviour
     [SerializeField] float maxNpcGap;
     [SerializeField] float npcGapDecreaseAmmountOnFailing;
     GameObject m_HordeCenter;
+    public event System.Action OnAllNPCsDeath;
 
     void Awake()
     {
@@ -26,7 +27,7 @@ public class HordeController : MonoBehaviour
         m_HordeCenter = new GameObject("HordeCenter");
         m_HordeCenter.AddComponent<NavMeshAgent2D>();
         m_HordeCenter.AddComponent<HordeGrid>().displayGridGizmos = false;
-
+        
     }
 
     public int GetTeamValue()
@@ -143,6 +144,15 @@ public class HordeController : MonoBehaviour
     {
         health.OnDeath -= OnNPCDeath;
         m_currentNpcHorde.Remove(health.GetComponent<NPCBehaviour>());
+        CheckAllNPCDeath();
+    }
+
+    public void CheckAllNPCDeath()
+    {
+        if(m_currentNpcHorde.Count!= 0)
+        {
+            OnAllNPCsDeath.Invoke();
+        }
     }
 
     public GameObject GetRandomNPC(){

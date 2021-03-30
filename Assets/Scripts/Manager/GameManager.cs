@@ -34,7 +34,7 @@ public class GameManager : MonoBehaviour
     public void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         var levelManager = FindObjectOfType<LevelManager>();
-        levelManager.Initialize(playerDataToLoad, hordeDataToLoad,ref ShowTutorial);
+        levelManager.Initialize(playerDataToLoad, hordeDataToLoad,ref ShowTutorial,this);
     }
 
     private void LoadNextLevel()
@@ -44,6 +44,11 @@ public class GameManager : MonoBehaviour
         {
             SceneManager.LoadScene(nextSceneIndex);
         }
+    }
+
+    public void BackToMainMenu()
+    {
+        SceneManager.LoadScene(0);
     }
 
     private void InitializeGameData()

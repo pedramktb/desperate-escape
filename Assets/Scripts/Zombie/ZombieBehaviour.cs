@@ -12,6 +12,12 @@ public class ZombieBehaviour : MonoBehaviour
     bool isFlashing;
     GameObject objectToFollow;
     ZombieSpawner zombieSpawner;
+    
+    public void OnDeath(Health health)
+    {
+        health.OnDeath -= OnDeath;
+        Destroy();
+    }
 
     public void OnTargetDeath(Health health)
     {
@@ -60,6 +66,7 @@ public class ZombieBehaviour : MonoBehaviour
         pathfinder.speed = moveSpeed;
         objectToFollow.GetComponent<Health>().OnDeath += OnTargetDeath;
         health.OnDamaged += OnDamaged;
+        health.OnDeath += OnDeath;
     }
 
     private void OnDamaged(Health health, float amount, GameObject source)
@@ -95,5 +102,12 @@ public class ZombieBehaviour : MonoBehaviour
         {
             other.gameObject.GetComponent<Health>().TakeDamage(demagePerSecond * Time.fixedDeltaTime, gameObject);
         }
+    }
+
+
+
+    public void Destroy()
+    {
+        Destroy(gameObject);
     }
 }

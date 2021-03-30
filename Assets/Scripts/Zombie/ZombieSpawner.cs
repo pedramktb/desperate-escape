@@ -32,6 +32,7 @@ public class ZombieSpawner : MonoBehaviour
         pathfinder.isStopped = true;
         isSpawning = false;
         hasWavePassed = false;
+        zombies = new List<ZombieBehaviour>();
         isWaveActive = false;
     }
 
@@ -61,6 +62,7 @@ public class ZombieSpawner : MonoBehaviour
         {
             spawnedZombie = Instantiate(zombieStrongPrefabRef, spawnPos, Quaternion.identity, transform).GetComponent<ZombieBehaviour>();
         }
+        zombies.Add(spawnedZombie);
         spawnedZombie.Initialize(GetTargetToFollow(),this);
         spawnedZombie.GetComponent<Health>().OnDeath += OnZombieDeath;
         spawnedZombie.ShouldFollow = true;
@@ -84,6 +86,15 @@ public class ZombieSpawner : MonoBehaviour
         foreach (var i in zombies)
         {
             i.ShouldFollow = false;
+        }
+    }
+
+    public void StopAndDestroyEverything()
+    {
+        isSpawning = false;
+        foreach(var i in zombies)
+        {
+            i.Destroy();
         }
     }
 
@@ -152,7 +163,7 @@ public class ZombieSpawner : MonoBehaviour
 
     private void OnZombieDeath(Health health)
     {
-        //zombies.Remove(health.GetComponent<ZombieBehaviour>());
+        zombies.Remove(health.GetComponent<ZombieBehaviour>());
     }
 
 

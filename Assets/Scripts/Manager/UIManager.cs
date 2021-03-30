@@ -8,6 +8,8 @@ public class UIManager : MonoBehaviour
     [SerializeField] MainUI mainUIRef;
     [SerializeField] GameObject wavePanelRef;
     [SerializeField] GameObject startingPanelRef;
+    [SerializeField] GameObject losePanelRef;
+    GameManager gameManager;
     PlayerBehaviour playerRef;
     HordeController hordeRef;
 
@@ -22,10 +24,11 @@ public class UIManager : MonoBehaviour
         OnTutorialComplete.Invoke();
     }
 
-    public void Initialize(PlayerBehaviour playerRef, HordeController hordeRef)
+    public void Initialize(PlayerBehaviour playerRef, HordeController hordeRef , GameManager gameManager)
     {
         this.playerRef = playerRef;
         this.hordeRef = hordeRef;
+        this.gameManager = gameManager;
         mainUIRef.Initialize(playerRef, hordeRef);
     }
 
@@ -58,4 +61,19 @@ public class UIManager : MonoBehaviour
     {
         startingPanelRef.SetActive(false);
     }
+    public void ShowLosePanel()
+    {
+        losePanelRef.SetActive(true);
+    }
+
+    public void HideLosePanel()
+    {
+        losePanelRef.SetActive(false);
+    }
+
+    public void BackToMainMenu()
+    {
+        gameManager.BackToMainMenu();
+    }
+
 }

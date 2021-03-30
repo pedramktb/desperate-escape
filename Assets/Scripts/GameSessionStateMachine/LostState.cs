@@ -14,10 +14,10 @@ public class LostState : State
     }
     public override void Init()
     {
-        throw new System.NotImplementedException();
+        m_UIManager.ShowLosePanel();
     }
     public override void DeInit()
     {
-        throw new System.NotImplementedException();
+        m_UIManager.HideLosePanel();
     }
 }
