@@ -588,7 +588,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: gAmEmAkErZ
+  m_text: 'gEyMmAkErZ
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e98c89f564a546044bb2bad8331bb62f, type: 2}
   m_sharedMaterial: {fileID: -8763757053274578514, guid: e98c89f564a546044bb2bad8331bb62f, type: 2}

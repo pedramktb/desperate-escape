@@ -12,6 +12,8 @@ public class UIManager : MonoBehaviour
     [SerializeField] GameObject tutorialPanelRef;
     [SerializeField] GameObject wonPanelRef;
     [SerializeField] GameObject roundFinishedPanelRef;
+    [SerializeField] TMPro.TextMeshProUGUI winKill;
+    [SerializeField] TMPro.TextMeshProUGUI WinScore;
     GameManager gameManager;
     PlayerBehaviour playerRef;
     HordeController hordeRef;
@@ -28,7 +30,7 @@ public class UIManager : MonoBehaviour
         OnTutorialComplete.Invoke();
     }
 
-    public void Initialize(PlayerBehaviour playerRef, HordeController hordeRef , GameManager gameManager)
+    public void Initialize(PlayerBehaviour playerRef, HordeController hordeRef, GameManager gameManager)
     {
         this.playerRef = playerRef;
         this.hordeRef = hordeRef;
@@ -83,6 +85,7 @@ public class UIManager : MonoBehaviour
     public void ShowWonPanel()
     {
         wonPanelRef.SetActive(true);
+        SetWinStats();
     }
 
     public void HideWonPanel()
@@ -97,5 +100,11 @@ public class UIManager : MonoBehaviour
     public void HideRoundPanel()
     {
         roundFinishedPanelRef.SetActive(false);
+    }
+
+    private void SetWinStats()
+    {
+        winKill.text = $"Kills: {playerRef.GetData().Kill}";
+        WinScore.text = $"Score: {playerRef.GetData().Score}";
     }
 }
