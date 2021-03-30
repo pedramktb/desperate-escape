@@ -47,6 +47,7 @@ public class DuringGameState : State
         m_playerRef.GetComponent<Health>().OnDeath += OnPlayerDeath;
         m_UIManager.ShowMainUI();
         m_hordeController.OnAllNPCsDeath += OnAllNPCDeath;
+        m_hordeController.OnAllNPCsSafety += OnNPCsSafety;
     }
     public override void DeInit()
     {
@@ -55,7 +56,8 @@ public class DuringGameState : State
         m_UIManager.HideMainUI();
         m_playerRef.GetComponent<Health>().OnDeath -= OnPlayerDeath;
         m_hordeController.OnAllNPCsDeath -= OnAllNPCDeath;
-    
+        m_hordeController.OnAllNPCsSafety -= OnNPCsSafety;
+
         foreach (var i in m_spawners)
         {
             i.StopAndDestroyEverything();
@@ -93,6 +95,11 @@ public class DuringGameState : State
     public void OnZombieDeath()
     {
         m_playerRef.currentKills++;
+    }
+
+    public void OnNPCsSafety()
+    {
+        m_levelManager.SetState(GameSessionState.ChooseSacrifice);
     }
 
 }

@@ -10,6 +10,8 @@ public class UIManager : MonoBehaviour
     [SerializeField] GameObject startingPanelRef;
     [SerializeField] GameObject losePanelRef;
     [SerializeField] GameObject tutorialPanelRef;
+    [SerializeField] GameObject wonPanelRef;
+    [SerializeField] GameObject roundFinishedPanelRef;
     GameManager gameManager;
     PlayerBehaviour playerRef;
     HordeController hordeRef;
@@ -78,4 +80,22 @@ public class UIManager : MonoBehaviour
         gameManager.Restart();
     }
 
+    public void ShowWonPanel()
+    {
+        wonPanelRef.SetActive(true);
+    }
+
+    public void HideWonPanel()
+    {
+        wonPanelRef.SetActive(false);
+    }
+    public void ShowRoundPanel()
+    {
+        roundFinishedPanelRef.SetActive(true);
+    }
+
+    public void HideRoundPanel()
+    {
+        roundFinishedPanelRef.SetActive(false);
+    }
 }

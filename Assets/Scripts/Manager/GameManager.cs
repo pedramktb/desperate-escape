@@ -5,28 +5,32 @@ using System;
 using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
-    public Action<NPCBehaviour> OnNPCDeath;
     private PlayerData startPlayerData;
     private HordeData startHordeData;
     private PlayerData playerDataToLoad;
     private HordeData hordeDataToLoad;
     private bool ShowTutorial = true;
+    public int levelCount;
+    public int currentLevel;
 
-    public void Start()
+
+    private void Start()
     {
-        
+        levelCount = SceneManager.sceneCountInBuildSettings;
+        currentLevel = 0;
     }
 
     public void Play()
     {
         InitializeGameData();
-        StartLevel(1, startPlayerData, startHordeData);
+        playerDataToLoad = startPlayerData;
+        hordeDataToLoad = startHordeData;
+        StartLevel(1);
     }
 
-    private void StartLevel(int levelIndex, PlayerData playerData, HordeData hordeData)
+    private void StartLevel(int levelIndex)
     {
-        playerDataToLoad = playerData;
-        hordeDataToLoad = hordeData;
+        currentLevel = levelIndex;
         SceneManager.LoadScene(levelIndex, LoadSceneMode.Single);
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
@@ -34,21 +38,30 @@ public class GameManager : MonoBehaviour
     public void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         var levelManager = FindObjectOfType<LevelManager>();
-        levelManager.Initialize(playerDataToLoad, hordeDataToLoad,ref ShowTutorial,this);
+        levelManager.Initialize(playerDataToLoad, hordeDataToLoad, ref ShowTutorial, this);
     }
 
-    private void LoadNextLevel()
+    public void LoadNextLevel(PlayerBehaviour playerBehaviour, HordeController hordeController)
     {
-        int nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
-        if (SceneManager.sceneCount > nextSceneIndex)
+        PlayerData playerData = playerBehaviour.GetData();
+        playerData.Kill = playerBehaviour.currentKills;
+        playerData.Score += hordeController.GetTeamValue();
+        playerDataToLoad = playerData;
+
+        List<NPCData> horde = new List<NPCData>();
+        foreach (var i in hordeController.GetNPCs())
         {
-            SceneManager.LoadScene(nextSceneIndex);
+            horde.Add(i.GetData());
         }
+        hordeDataToLoad = new HordeData(horde);
+
+        int nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
+        StartLevel(nextSceneIndex);
     }
 
     public void Restart()
     {
-        SceneManager.LoadScene(1,LoadSceneMode.Single);
+        SceneManager.LoadScene(1, LoadSceneMode.Single);
     }
 
     private void InitializeGameData()

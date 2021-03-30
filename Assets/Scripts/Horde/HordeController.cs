@@ -15,11 +15,17 @@ public class HordeController : MonoBehaviour
     [SerializeField] float npcGapDecreaseAmmountOnFailing;
     GameObject m_HordeCenter;
     public event System.Action OnAllNPCsDeath;
+    public event System.Action OnAllNPCsSafety;
 
     void Awake()
     {
         m_currentNpcHorde = new List<NPCBehaviour>();
         InitializeHordeCenter();
+    }
+
+    public List<NPCBehaviour> GetNPCs()
+    {
+        return m_currentNpcHorde;
     }
 
     private void InitializeHordeCenter()
@@ -40,6 +46,16 @@ public class HordeController : MonoBehaviour
         return sum;
     }
 
+    public bool CheckSafety()
+    {
+        foreach (var i in m_currentNpcHorde)
+        {
+            if (!i.IsSafe)
+                return false;
+        }
+        OnAllNPCsSafety.Invoke();
+        return true;
+    }
     public void InitilizeHorde(HordeData hordeData, Vector2 hordeStartingPos)
     {
         NPCBehaviour npc;
@@ -69,7 +85,7 @@ public class HordeController : MonoBehaviour
                 throw new System.Exception("Invalid hordeData");
             m_currentNpcHorde.Add(npc);
             npc.GetComponent<Health>().OnDeath += OnNPCDeath;
-            npc.Initialize(data);
+            npc.Initialize(data, this);
         }
         m_HordeCenter.transform.position = hordeStartingPos;
         MoveHordeTowards(hordeStartingPos);

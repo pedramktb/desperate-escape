@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class NormalGuy : NPCBehaviour
 {
-    public override void Initialize(NPCData data)
+    public override void Initialize(NPCData data,HordeController hordeController)
     {
-        base.Initialize(data);
+        base.Initialize(data, hordeController);
     }
 }

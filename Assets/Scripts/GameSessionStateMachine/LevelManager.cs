@@ -35,7 +35,7 @@ public class LevelManager : StateMachine
         SetState(GameSessionState.Lost);
     }
 
-    public void Initialize(PlayerData playerData, HordeData hordeData, ref bool showTutorial,GameManager gameManager)
+    public void Initialize(PlayerData playerData, HordeData hordeData, ref bool showTutorial, GameManager gameManager)
     {
         m_timeEngine = gameObject.AddComponent<TimeEngine>();
         m_playerData = playerData;
@@ -51,6 +51,8 @@ public class LevelManager : StateMachine
         }
         SetState(GameSessionState.Intro);
     }
+
+
 
     public void SetState(GameSessionState state)
     {
@@ -77,7 +79,7 @@ public class LevelManager : StateMachine
         }
         else if (state == GameSessionState.DuringGame)
         {
-            gameState = new DuringGameState(this, UIManager, m_hordeController, m_playerRef,spawners,cameraController, m_timeEngine);
+            gameState = new DuringGameState(this, UIManager, m_hordeController, m_playerRef, spawners, cameraController, m_timeEngine);
         }
         else if (state == GameSessionState.Lost)
         {
@@ -89,7 +91,7 @@ public class LevelManager : StateMachine
         }
         else if (state == GameSessionState.ChooseSacrifice)
         {
-            gameState = new ChooseSacrificeState(this, UIManager);
+            gameState = new ChooseSacrificeState(this, UIManager, m_timeEngine, m_gameManager, m_playerRef, m_hordeController);
         }
         else
         {

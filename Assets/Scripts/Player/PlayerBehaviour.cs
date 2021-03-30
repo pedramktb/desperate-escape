@@ -22,6 +22,12 @@ public class PlayerBehaviour : MonoBehaviour
             canMove = value;
         }
     }
+
+    public PlayerData GetData()
+    {
+        return m_playerData;
+
+    }
     void Awake(){
         m_playerMovement = GetComponent<PlayerMovement>();
         m_playerShooting = GetComponent<PlayerShooting>();
@@ -41,6 +47,7 @@ public class PlayerBehaviour : MonoBehaviour
         m_playerShooting.Initialize(playerData.MaxShotgunAmmo,playerData.MaxRockerLauncherAmmo,playerData.MaxMinigunAmmo);
         m_health.OnDamaged += OnDamaged;
         m_health.OnDeath += OnDeath;
+        currentKills = playerData.Kill;
     }
 
     private void OnDamaged(Health health, float amount, GameObject source)

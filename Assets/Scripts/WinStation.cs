@@ -4,15 +4,18 @@ using UnityEngine;
 
 public class WinStation : MonoBehaviour
 {
-
-    void Start()
+    void OnTriggerEnter2D(Collider2D other)
     {
-        
+        if (other.gameObject.tag == "NPC")
+        {
+            other.gameObject.GetComponent<NPCBehaviour>().IsSafe = true;
+        }
     }
-
-    // Update is called once per frame
-    void Update()
+    void OnTriggerExit2D(Collider2D other)
     {
-        
+        if (other.gameObject.tag == "NPC")
+        {
+            other.gameObject.GetComponent<NPCBehaviour>().IsSafe = false;
+        }
     }
 }

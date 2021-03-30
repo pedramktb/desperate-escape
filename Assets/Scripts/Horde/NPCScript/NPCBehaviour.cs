@@ -8,6 +8,31 @@ public abstract class NPCBehaviour : MonoBehaviour
     NPCData m_data;
     AgentMovement movement;
     SpriteRenderer spriteRenderer;
+    HordeController hordeController;
+    bool isSafe;
+    public bool IsSafe
+    {
+        get
+        {
+            return isSafe;
+        }
+        set
+        {
+            isSafe = value;
+            if(value == true)
+                CheckForSafety();
+        }
+    }
+
+    public NPCData GetData()
+    {
+        return m_data;
+    }
+    private void CheckForSafety()
+    {
+        hordeController.CheckSafety();
+    }
+
     bool isFlashing;
     public int IsUnderAttack { get; private set; }
     public int Value { get; private set; }
@@ -45,7 +70,7 @@ public abstract class NPCBehaviour : MonoBehaviour
         isFlashing = false;
     }
 
-    public virtual void Initialize(NPCData data)
+    public virtual void Initialize(NPCData data, HordeController hordeController)
     {
         m_data = data;
         movement.Initialize(data.MoveSpeed);
@@ -54,6 +79,8 @@ public abstract class NPCBehaviour : MonoBehaviour
         m_Health.OnDamaged += OnDamaged;
         m_Health.OnDeath += OnDeath;
         Value = data.Value;
+        this.hordeController = hordeController;
+        IsSafe = false;
     }
 
     public void SetDestination(Vector2 pos)

@@ -1,4 +1,6 @@
 using UnityEngine;
+using Utility;
+
 public class Shotgun : Weapon
 {
     public Transform firePoint;
@@ -6,14 +8,19 @@ public class Shotgun : Weapon
     public float palletForce, delay, palletDiversityAngle, palletDiversityDistance;
     public int palletCount;
     public Animator animator;
+    TimeEngine timeEngine;
     float lastTime;
+
+    private void Awake()
+    {
+        timeEngine = gameObject.AddComponent<TimeEngine>();
+    }
     public override void Shoot()
     {
         if (Time.time - lastTime < delay  || PlayerShooting.instance.CurrentShotgunAmmo == 0) return;
         lastTime = Time.time;
         PlayerShooting.instance.CurrentShotgunAmmo--;
         AudioManager.instance.PlaySound("ShotgunShot");
-        animator.SetTrigger("Shoot");
         GameObject[] pallets = new GameObject[palletCount];
         for (int i = 0; i <= palletCount - 1; i++)
         {
@@ -23,5 +30,13 @@ public class Shotgun : Weapon
         }
         ParticleSystem particleSystem = GetComponentInChildren<ParticleSystem>();
         particleSystem.Play();
+        timeEngine.StartTimer(new Timer(0.2f, "HandShotgunEffects", HandShotgunEffects));
+    }
+
+    private void HandShotgunEffects()
+    {
+        Debug.Log("Called");
+        animator.SetTrigger("Shoot");
+        AudioManager.instance.PlaySound("ShotgunReload");
     }
 }

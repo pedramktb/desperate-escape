@@ -14,10 +14,10 @@ public class WonState : State
     }
     public override void Init()
     {
-        throw new System.NotImplementedException();
+        m_UIManager.ShowWonPanel();
     }
     public override void DeInit()
     {
-        throw new System.NotImplementedException();
+        m_UIManager.HideWonPanel();
     }
 }
