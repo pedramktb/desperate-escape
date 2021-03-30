@@ -11,6 +11,20 @@ public class ZombieBehaviour : MonoBehaviour
     Health health;
     bool isFlashing;
     GameObject objectToFollow;
+    ZombieSpawner zombieSpawner;
+
+    public void OnTargetDeath(Health health)
+    {
+        health.OnDeath -= OnTargetDeath;
+        GetNewTarget();
+    }
+
+    private void GetNewTarget()
+    {
+        objectToFollow = zombieSpawner.GetTargetToFollow();
+        objectToFollow.GetComponent<Health>().OnDeath += OnTargetDeath;
+    }
+
     public bool ShouldFollow
     {
         get
@@ -39,10 +53,12 @@ public class ZombieBehaviour : MonoBehaviour
     }
 
 
-    public void Initialize(GameObject objectToFollow)
+    public void Initialize(GameObject objectToFollow, ZombieSpawner zombieSpawner)
     {
+        this.zombieSpawner = zombieSpawner;
         this.objectToFollow = objectToFollow;
         pathfinder.speed = moveSpeed;
+        objectToFollow.GetComponent<Health>().OnDeath += OnTargetDeath;
         health.OnDamaged += OnDamaged;
     }
 
@@ -68,6 +84,8 @@ public class ZombieBehaviour : MonoBehaviour
 
     void FixedUpdate()
     {
+        if (objectToFollow == null)
+            GetNewTarget();
         pathfinder.SetDestination(objectToFollow.transform.position);
     }
 

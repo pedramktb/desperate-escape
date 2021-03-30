@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityCore.GameSystems;
 public class PlayerBehaviour : MonoBehaviour
 {
+    [HideInInspector] public int currentKills;
     PlayerMovement m_playerMovement;
     PlayerShooting m_playerShooting;
     SpriteRenderer spriteRenderer;
@@ -27,6 +28,7 @@ public class PlayerBehaviour : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         m_health = GetComponent<Health>();
         isFlashing = false;
+        currentKills = 0;
     }
 
     public void InitializePlayer(PlayerData playerData){

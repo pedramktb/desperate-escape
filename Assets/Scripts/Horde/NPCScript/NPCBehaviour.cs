@@ -17,6 +17,12 @@ public abstract class NPCBehaviour : MonoBehaviour
         StartCoroutine(Flash());
     }
 
+    private void OnDeath(Health health)
+    {
+        Destroy(gameObject, 5);
+        gameObject.SetActive(false);
+    }
+
     IEnumerator Flash()
     {
         if (isFlashing)
@@ -47,6 +53,7 @@ public abstract class NPCBehaviour : MonoBehaviour
         m_Health.SetMaxHealth(data.HP);
         m_Health.SetMaxShield(0);
         m_Health.OnDamaged += OnDamaged;
+        m_Health.OnDeath += OnDeath;
     }
 
     public void SetDestination(Vector2 pos)

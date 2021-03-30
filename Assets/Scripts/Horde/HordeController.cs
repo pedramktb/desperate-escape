@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityCore.GameSystems;
 public class HordeController : MonoBehaviour
 {
     List<NPCBehaviour> m_currentNpcHorde;
@@ -27,6 +28,17 @@ public class HordeController : MonoBehaviour
         m_HordeCenter.AddComponent<HordeGrid>().displayGridGizmos = false;
 
     }
+
+    public int GetTeamValue()
+    {
+        int sum = 0;
+        foreach(var i in m_currentNpcHorde)
+        {
+            sum += i.Value;
+        }
+        return sum;
+    }
+
     public void InitilizeHorde(HordeData hordeData, Vector2 hordeStartingPos)
     {
         NPCBehaviour npc;
@@ -55,6 +67,7 @@ public class HordeController : MonoBehaviour
             else
                 throw new System.Exception("Invalid hordeData");
             m_currentNpcHorde.Add(npc);
+            npc.GetComponent<Health>().OnDeath += OnNPCDeath;
             npc.Initialize(data);
         }
         m_HordeCenter.transform.position = hordeStartingPos;
@@ -85,10 +98,12 @@ public class HordeController : MonoBehaviour
         }
 
         var generatedPositions = grid.GetChosenPositions();
+        Vector2 pos;
 
         for (int i = 0; i < m_currentNpcHorde.Count; i++)
         {
-            m_currentNpcHorde[i].SetDestination(generatedPositions[i]);
+            pos = new Vector2(generatedPositions[i].x + Random.Range(-0.25f, 0.25f), generatedPositions[i].y + Random.Range(-0.25f, 0.25f));
+            m_currentNpcHorde[i].SetDestination(pos);
         }
     }
 
@@ -122,6 +137,12 @@ public class HordeController : MonoBehaviour
         if (choosenNodeCount == 1)
             return false;
         return true;
+    }
+
+    public void OnNPCDeath(Health health)
+    {
+        health.OnDeath -= OnNPCDeath;
+        m_currentNpcHorde.Remove(health.GetComponent<NPCBehaviour>());
     }
 
     public GameObject GetRandomNPC(){

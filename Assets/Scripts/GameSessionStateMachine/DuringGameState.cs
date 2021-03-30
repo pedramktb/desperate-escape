@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityCore.StateMachine;
+using Utility;
+
 
 public class DuringGameState : State
 {
@@ -12,13 +14,15 @@ public class DuringGameState : State
     bool m_canOperate;
     CameraController m_cameraController;
     List<ZombieSpawner> m_spawners;
+    TimeEngine m_timeEngine;
     public DuringGameState(
         LevelManager levelManager,
         UIManager UIManager,
         HordeController hordeController,
         PlayerBehaviour playerRef,
         List<ZombieSpawner> spawners,
-        CameraController cameraController)
+        CameraController cameraController,
+        TimeEngine timeEngine)
     {
         m_canOperate = false;
         m_levelManager = levelManager;
@@ -27,6 +31,7 @@ public class DuringGameState : State
         m_playerRef = playerRef;
         m_spawners = spawners;
         m_cameraController = cameraController;
+        m_timeEngine = timeEngine;
     }
     public override void Init()
     {
@@ -35,12 +40,20 @@ public class DuringGameState : State
         foreach (var i in m_spawners)
         {
             i.StartSpawning();
+            i.OnWaveStarted += OnWaveStarted;
         }
+        m_UIManager.ShowMainUI();
     }
     public override void DeInit()
     {
         m_playerRef.AreActionsAllowed = false;
         m_canOperate = false;
+        m_UIManager.HideMainUI();
+        foreach (var i in m_spawners)
+        {
+            i.StopSpawning();
+            i.OnWaveStarted -= OnWaveStarted;
+        }
     }
 
     public override void Update()
@@ -51,5 +64,11 @@ public class DuringGameState : State
         {
             m_hordeController.MoveHordeTowards(Camera.main.ScreenToWorldPoint(Input.mousePosition));
         }
+    }
+
+    public void OnWaveStarted()
+    {
+        m_UIManager.ShowWavePanel();
+        m_timeEngine.StartTimer(new Timer(3, "hide wave panel", m_UIManager.HideWavePanel));
     }
 }

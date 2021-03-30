@@ -57,11 +57,13 @@ public class IntroState : State
                 i.Initialize(m_hordeController, m_playerRef);
             }
         }
+        m_UIManager.Initialize(m_playerRef, m_hordeController);
+        m_UIManager.ShowStartingPanel();
         m_timeEngine.StartTimer(new Timer(3, "introAnimation", OnIntroAnimationFinished));
     }
     public override void DeInit()
     {
-
+        m_UIManager.HideStartingPanel();
     }
     private void OnIntroAnimationFinished()
     {

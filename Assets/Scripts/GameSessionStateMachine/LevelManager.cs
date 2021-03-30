@@ -73,7 +73,7 @@ public class LevelManager : StateMachine
         }
         else if (state == GameSessionState.DuringGame)
         {
-            gameState = new DuringGameState(this, UIManager, m_hordeController, m_playerRef,spawners,cameraController);
+            gameState = new DuringGameState(this, UIManager, m_hordeController, m_playerRef,spawners,cameraController, m_timeEngine);
         }
         else if (state == GameSessionState.Lost)
         {

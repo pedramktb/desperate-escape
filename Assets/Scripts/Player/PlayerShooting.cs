@@ -12,6 +12,7 @@ public class PlayerShooting : MonoBehaviour
     GameObject minigun;
     GameObject shotgun;
     GameObject rocketLauncher;
+    public string CurrentWeapon { get; private set; }
     Weapon weapon;
 
     public int CurrentShotgunAmmo { get; private set; }
@@ -31,7 +32,8 @@ public class PlayerShooting : MonoBehaviour
         Switch(initialWeapon);
     }
 
-    public void Initialize(int currentShotgunAmmo,int currentRockerlauncherAmmo,int currentMinigunAmmo){
+    public void Initialize(int currentShotgunAmmo, int currentRockerlauncherAmmo, int currentMinigunAmmo)
+    {
         CurrentShotgunAmmo = currentShotgunAmmo;
         CurrentRockerlauncherAmmo = currentRockerlauncherAmmo;
         CurrentMinigunAmmo = currentMinigunAmmo;
@@ -54,21 +56,27 @@ public class PlayerShooting : MonoBehaviour
         switch (w)
         {
             case "Pistol":
+                CurrentWeapon = "Pistol";
                 if (weapon != null) weapon.gameObject.SetActive(false);
+                AudioManager.instance.PlaySound("PistolReload");
                 weapon = pistol.GetComponent<Pistol>();
                 pistol.SetActive(true);
                 break;
             case "Minigun":
+                CurrentWeapon = "Minigun";
                 if (weapon != null) weapon.gameObject.SetActive(false);
                 weapon = minigun.GetComponent<Minigun>();
                 minigun.SetActive(true);
                 break;
             case "Shotgun":
+                CurrentWeapon = "Shotgun";
                 if (weapon != null) weapon.gameObject.SetActive(false);
+                AudioManager.instance.PlaySound("ShotgunReload");
                 weapon = shotgun.GetComponent<Shotgun>();
                 shotgun.SetActive(true);
                 break;
             case "Rocket Launcher":
+                CurrentWeapon = "Rocket Launcher";
                 if (weapon != null) weapon.gameObject.SetActive(false);
                 weapon = rocketLauncher.GetComponent<RocketLauncher>();
                 rocketLauncher.SetActive(true);

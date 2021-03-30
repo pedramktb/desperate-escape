@@ -98,19 +98,19 @@ namespace UnityCore.GameSystems
                 demageDealtToShield = amount;
                 CurrentSheild -= amount;
                 if (demageDealtToShield > 0f && OnDamaged != null)
-                    OnDamaged.Invoke(this, demageDealtToShield, damageSource);
+                    OnDamaged?.Invoke(this, demageDealtToShield, damageSource);
                 return;
             }
             demageDealtToShield = CurrentSheild;
             amount -= CurrentSheild;
             if (shieldBefore != 0)
-                OnShieldBroken.Invoke(this);
+                OnShieldBroken?.Invoke(this);
             CurrentHealth -= amount;
             CurrentHealth = Mathf.Clamp(CurrentHealth, 0f, maxHealth);
             trueDamageAmount = healthBefore - CurrentHealth;
             if (trueDamageAmount > 0f && OnDamaged != null)
             {
-                OnDamaged.Invoke(this, trueDamageAmount + demageDealtToShield, damageSource);
+                OnDamaged?.Invoke(this, trueDamageAmount + demageDealtToShield, damageSource);
             }
             CheckForDeath();
         }

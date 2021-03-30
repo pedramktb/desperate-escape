@@ -24,6 +24,7 @@ public class ZombieSpawner : MonoBehaviour
     bool isWaveActive;
     List<WaveTrigger> waveTriggers;
 
+    public event System.Action OnWaveStarted;
     void Awake()
     {
         waveTriggers = new List<WaveTrigger>();
@@ -38,7 +39,8 @@ public class ZombieSpawner : MonoBehaviour
     {
         this.hordeController = hordeController;
         this.playerBehaviour = playerBehaviour;
-        foreach(var i in waveTriggers){
+        foreach (var i in waveTriggers)
+        {
             i.Initialize(this);
         }
     }
@@ -59,17 +61,22 @@ public class ZombieSpawner : MonoBehaviour
         {
             spawnedZombie = Instantiate(zombieStrongPrefabRef, spawnPos, Quaternion.identity, transform).GetComponent<ZombieBehaviour>();
         }
+        spawnedZombie.Initialize(GetTargetToFollow(),this);
+        spawnedZombie.GetComponent<Health>().OnDeath += OnZombieDeath;
+        spawnedZombie.ShouldFollow = true;
+    }
+
+    public GameObject GetTargetToFollow()
+    {
         int rand = (int)Random.Range(0, 2);
         if (rand == 0)
         {
-            spawnedZombie.Initialize(playerBehaviour.gameObject);
+            return playerBehaviour.gameObject;
         }
         else
         {
-            spawnedZombie.Initialize(hordeController.GetRandomNPC());
+            return hordeController.GetRandomNPC();
         }
-        spawnedZombie.GetComponent<Health>().OnDeath += OnZombieDeath;
-        spawnedZombie.ShouldFollow = true;
     }
 
     public void StopAllZombies()
@@ -85,7 +92,8 @@ public class ZombieSpawner : MonoBehaviour
         if (!isSpawning)
             return;
         pathfinder.destination = playerBehaviour.transform.position;
-        if(pathfinder.remainingDistance > distanceToStartSpawning){
+        if (pathfinder.remainingDistance > distanceToStartSpawning)
+        {
             return;
         }
         if (isWaveActive)
@@ -126,16 +134,17 @@ public class ZombieSpawner : MonoBehaviour
 
     public void StartWave()
     {
-        if(hasWavePassed)
+        if (hasWavePassed)
             return;
-        Debug.Log("Wave Started!");
+        OnWaveStarted.Invoke();
         isSpawning = true;
         isWaveActive = true;
         timer = waveSpawnRate;
         timer2 = waveDurration;
     }
 
-    public void StopSpawning(){
+    public void StopSpawning()
+    {
         isSpawning = false;
         isWaveActive = false;
     }
