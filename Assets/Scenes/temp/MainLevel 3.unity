@@ -64180,8 +64180,12 @@ PrefabInstance:
       value: ZombieSpawner 1
       objectReference: {fileID: 0}
     - target: {fileID: 5454870462782953887, guid: 85c5030e970baef41a3e0049e78a4495, type: 3}
+      propertyPath: type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5454870462782953887, guid: 85c5030e970baef41a3e0049e78a4495, type: 3}
       propertyPath: spawnRate
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5454870462782953887, guid: 85c5030e970baef41a3e0049e78a4495, type: 3}
       propertyPath: waveDurration
