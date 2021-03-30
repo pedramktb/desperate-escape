@@ -214,7 +214,7 @@ MonoBehaviour:
   firePoint: {fileID: 8073269086838603432}
   palletPrefab: {fileID: 2504930085306382558, guid: 98b62711265547c4ba239086bd969a05, type: 3}
   palletForce: 15
-  delay: 1
+  delay: 0.6
   palletDiversityAngle: 10
   palletDiversityDistance: 0.2
   palletCount: 5

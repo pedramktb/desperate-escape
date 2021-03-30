@@ -131,8 +131,7 @@ MonoBehaviour:
   firePoint: {fileID: 7141960401152016125}
   bulletPrefab: {fileID: 4135124772278291149, guid: abad7c16756529949bd31ead8faa592e, type: 3}
   bulletForce: 15
-  delay: 0.5
-  lastTime: 0
+  delay: 0.25
   animator: {fileID: -127144337266277021}
 --- !u!95 &-127144337266277021
 Animator:
